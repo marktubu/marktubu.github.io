@@ -45,7 +45,7 @@
     
     <title>
         
-            标签: 日语 | 
+            理解RenderType | 
         
         Marktubu&#39;s Blog
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",Shader">
     <meta name="theme-color" content="#00BAFF">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Marktubu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://marktubu.github.io/tags/日语/">
+    <meta name="msapplication-starturl" content="https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html">
     <meta name="msapplication-navbutton-color" content="#00BAFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Marktubu&#39;s Blog">
@@ -232,13 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://marktubu.github.io/tags/日语/">
+    <meta property="og:url" content="https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 日语 | Marktubu&#39;s Blog">
+    <meta property="og:title" content="理解RenderType | Marktubu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="Shader"> 
 
+    
+        <meta property="article:published_time" content="Mon Sep 02 2019 15:41:24 GMT+0800">
+        <meta property="article:modified_time" content="Mon Sep 02 2019 15:47:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -246,13 +249,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://marktubu.github.io/tags/日语/index.html">
+        <link rel="canonical" href="https://marktubu.github.io/Understanding Unity Shader Tag 'RenderType'.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://marktubu.github.io/Understanding Unity Shader Tag 'RenderType'.html",
+    "headline": "理解RenderType",
+    "datePublished": "Mon Sep 02 2019 15:41:24 GMT+0800",
+    "dateModified": "Mon Sep 02 2019 15:47:26 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "marktubu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "The world is in my mind."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Marktubu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Shader",
+    "description": "",
+}
+</script>
 
 
     
@@ -286,160 +319,401 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RenderType的作用"><span class="post-toc-number">1.</span> <span class="post-toc-text">RenderType的作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用RenderType的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用RenderType的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Unity中RenderType的默认值"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unity中RenderType的默认值</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Pure Thumbnail -->
-            <div class="post-thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#00BAFF !important">
+            <div class="post_thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#00BAFF !important">
+        
+    
+            <p class="article-headline-p">
+                理解RenderType
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>marktubu</strong>
+        <span>9月 02, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Shader/">Shader</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/日语学习之品歌词.html">日语学习之品歌词</a></p>
-    </div>
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=理解RenderType&url=https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            鬼灭之刃    《红莲华》
-sekai ni  u chi no me sa re te世界  に  打 ち  の め  さ ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/日语学习之品歌词.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="marktubu's avatar">
-            </div>
-            <div>
-                <strong>marktubu</strong>
-                <span>8月 30, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/语言学习/">语言学习</a>
-              </span>
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=理解RenderType&url=https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html&via=marktubu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Facebook -->
+    
 
-            
+    <!-- Share Google+ -->
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=理解RenderType&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/Understanding Unity Shader Tag 'RenderType'.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
 </div>
 
-            
-            
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="RenderType的作用"><a href="#RenderType的作用" class="headerlink" title="RenderType的作用"></a>RenderType的作用</h4><p>李白说：天生我材必有用。那么RenderType的作用到底是什么呢？</p>
+<p>贴一段Unity对RenderType的描述：</p>
+<blockquote>
+<p>RenderTypetag categorizes shaders into several predefined groups, e.g. is is an opaque shader, or an alpha-tested shader etc. This is used by <a href="https://docs.unity3d.com/Manual/SL-ShaderReplacement.html" target="_blank" rel="noopener">Shader Replacement</a> and in some cases used to produce <a href="https://docs.unity3d.com/Manual/SL-CameraDepthTexture.html" target="_blank" rel="noopener">camera’s depth texture</a>. </p>
+</blockquote>
+<p>可知，RenderType可以在替代渲染中用到，也可以用来生成相机的深度纹理。</p>
+<h4 id="使用RenderType的方法"><a href="#使用RenderType的方法" class="headerlink" title="使用RenderType的方法"></a>使用RenderType的方法</h4><p>替换渲染通过使用 Camera.RenderWithShader 或者 Camera.SetReplacementShader 两个方法进行，这两个方法都接受两个参数，分别为 replacementShader 和 “替换标签” replacementTag，进行替换渲染时，场景中物体仍然使用他们的材质，但实际用于渲染的 Shader 已经改变，至于使用什么 Shader 进行渲染则由第二个参数 replacementTag 决定。规则如下：</p>
+<ol>
+<li><p>如果 replacementTag 为空，则场景中所有物体使用 replacementShader 进行渲染。</p>
+</li>
+<li><p>如果 replacementTag 不为空，将 replacementTag 的值记为 rtValue，继续进行以下验证：</p>
+<ol>
+<li><p>查询物体原有 Shader 中是否存在名为 rtValue 的 tag。如果不存在，该物体将不被渲染。</p>
+</li>
+<li><p>查询 replacementShader 中是否存在名为 rtValue 的 tag，且该 tag 的值和物体原有 Shader 中的名为 rtValue 的 tag 的值是否相同，如果不存在该 tag 或 tag 的值不相同，则该物体不被渲染。</p>
+<p>当同时满足以上两个条件时，物体的原有 Shader 会被替换为 replacementShader 中对应的那个 SubShader（即 tag 值相同的 Shader ) 进行渲染。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="Unity中RenderType的默认值"><a href="#Unity中RenderType的默认值" class="headerlink" title="Unity中RenderType的默认值"></a>Unity中RenderType的默认值</h4><ol>
+<li>Opaque：带有该标签的 ReplacementShader 可用于替换大多数 Shader（法线着色器、自发光着色器、反射着色器、地形着色器）</li>
+<li>Transparent：用于半透明着色器</li>
+<li>TransparentCutout：蒙面透明着色器</li>
+<li>Background：天空盒子</li>
+<li>Overlay：GUITexture、光晕着色器、闪光着色器</li>
+<li>TreeOpaque：地形引擎中的树皮</li>
+<li>TreeTransparentCutout：地形引擎中的树叶</li>
+<li>TreeBillboard：地形引擎中的广告牌树</li>
+<li>Grass：地形引擎中的草</li>
+<li>GrassBillboard：地形引擎中的广告牌草</li>
+</ol>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html">https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html</a>
+                    </p>
+                </blockquote>
         
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Pure Thumbnail -->
-            <div class="post-thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#00BAFF !important">
-        
+
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/日语假名之图像编码.html">日语假名之图像编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/日语假名之图像编码.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="marktubu's avatar">
-            </div>
-            <div>
-                <strong>marktubu</strong>
-                <span>8月 29, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/语言学习/">语言学习</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
+    
+        <!-- css -->
+        <style type="text/css">
+            .center {
+                text-align: center;
+            }
+            #donate_guide.noActive,#donate_board.noActive  {
+                /*display: none;*/
+                height:0;
+                opacity:0;
+                visibility: hidden;
+            }
+          .donate_bar a.btn_donate{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: url("/img/reward.png") no-repeat;
+            _background: url("/img/reward.png") no-repeat;
+       
+       
+            -webkit-transition: background 0s;
+            -moz-transition: background 0s;
+            -o-transition: background 0s;
+            -ms-transition: background 0s;
+            transition: background 0s;
+       
+          }
+          #donate_guide{
+            opacity:1;
+            visibility: visible;
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            transition: all .3s linear;
+          }
+          .donate_bar a.btn_donate:hover{ background-position: 0px -2px;}
+          .donate_bar .donate_txt {
+            display: block;
+            color: #9d9d9d;
+            font: 14px/2 "Microsoft Yahei";
+            margin-top:10px;
+          }
+          .bold{ font-weight: bold; }
+          @media screen and (max-width:500px) {
+            #donate_guide>a{
+              display:block;
+            }
+          }
+        </style>
+        <!-- /css -->
+       
+          <!-- Donate Module -->
+          <div id="donate_module">
+       
+          <!-- btn_donate & tips -->
+          <div id="donate_board" class="donate_bar center">
+              <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+            <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+            <span class="donate_txt">
+              Enjoy it ? Donate me !  真诚赞赏，手留余香
             </span>
+       
+       
+          </div>
+          <!-- /btn_donate & tips -->
+       
+          <!-- donate guide -->
+       
+          <div id="donate_guide" class="donate_bar center noActive">
+                <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+
+                <!--<a href="/img/wechat.png" title="用微信扫一扫哦~" class="fancybox" rel="article0">-->
+                  <img src="/img/wechat.png" title="微信打赏" height="190px" width="190"/>
+                  <span class="donate_txt">
+                    用微信扫一扫哦~
+                  </span>
+                <!--</a>-->
+          
+                    &nbsp;&nbsp;
+                    <br />
+                <!--<a href="/img/alipay.png" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">-->
+                  <img src="/img/alipay.png" title="支付宝打赏" height="190px" width="190"/>
+
+                  <span class="donate_txt">
+                    用支付宝扫一扫即可~
+                  </span>
+                <!--</a>-->
+
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  真诚赞赏，手留余香
+                </span>
+       
+          </div>
+          <!-- /donate guide -->
+       
+          <!-- donate script -->
+          <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+              $('#donate_board').addClass('noActive');
+              $('#donate_guide').removeClass('noActive');
+            }
+          </script>
+          <!-- /donate script -->
+       
+       
         </div>
-    </div>
+        <!-- /Donate Module -->
+        
 </div>
 
-            
-            
-        
-    
 
-    
+                
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 2 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://marktubu.github.io/Understanding Unity Shader Tag &#39;RenderType&#39;.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//marktubu.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
 </script>
 
-    
 </div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/日语学习之品歌词.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -610,6 +884,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
