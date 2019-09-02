@@ -518,6 +518,113 @@
     
 
     
+
+    
+        <!-- css -->
+        <style type="text/css">
+            .center {
+                text-align: center;
+            }
+            #donate_guide.noActive,#donate_board.noActive  {
+                /*display: none;*/
+                height:0;
+                opacity:0;
+                visibility: hidden;
+            }
+          .donate_bar a.btn_donate{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: url("/img/reward.png") no-repeat;
+            _background: url("/img/reward.png") no-repeat;
+       
+       
+            -webkit-transition: background 0s;
+            -moz-transition: background 0s;
+            -o-transition: background 0s;
+            -ms-transition: background 0s;
+            transition: background 0s;
+       
+          }
+          #donate_guide{
+            opacity:1;
+            visibility: visible;
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            transition: all .3s linear;
+          }
+          .donate_bar a.btn_donate:hover{ background-position: 0px -2px;}
+          .donate_bar .donate_txt {
+            display: block;
+            color: #9d9d9d;
+            font: 14px/2 "Microsoft Yahei";
+            margin-top:10px;
+          }
+          .bold{ font-weight: bold; }
+          @media screen and (max-width:500px) {
+            #donate_guide>a{
+              display:block;
+            }
+          }
+        </style>
+        <!-- /css -->
+       
+          <!-- Donate Module -->
+          <div id="donate_module">
+       
+          <!-- btn_donate & tips -->
+          <div id="donate_board" class="donate_bar center">
+              <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+            <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+            <span class="donate_txt">
+              Enjoy it ? Donate me !  手里捧着窝窝头~ 菜里没有一滴油~
+            </span>
+       
+       
+          </div>
+          <!-- /btn_donate & tips -->
+       
+          <!-- donate guide -->
+       
+          <div id="donate_guide" class="donate_bar center noActive">
+                <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+       
+            <a href="/img/wechat.png" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+              <img src="/img/wechat.png" title="微信打赏 Colin" height="190px" width="200px"/>
+            </a>
+       
+                &nbsp;&nbsp;
+       
+            <a href="/img/alipay.png" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+              <img src="/img/alipay.png" title="支付宝打赏 Colin" height="190px" width="200px"/>
+            </a>
+       
+            <span class="donate_txt">
+              Enjoy it ? Donate me !  手里捧着窝窝头~ 菜里没有一滴油~
+            </span>
+       
+          </div>
+          <!-- /donate guide -->
+       
+          <!-- donate script -->
+          <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+              $('#donate_board').addClass('noActive');
+              $('#donate_guide').removeClass('noActive');
+            }
+          </script>
+          <!-- /donate script -->
+       
+       
+        </div>
+        <!-- /Donate Module -->
+        
 </div>
 
 
