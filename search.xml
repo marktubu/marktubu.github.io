@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>理解RenderType</title>
+      <link href="/Understanding%20Unity%20Shader%20Tag%20&#39;RenderType&#39;.html"/>
+      <url>/Understanding%20Unity%20Shader%20Tag%20&#39;RenderType&#39;.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="RenderType的作用"><a href="#RenderType的作用" class="headerlink" title="RenderType的作用"></a>RenderType的作用</h4><p>李白说：天生我材必有用。那么RenderType的作用到底是什么呢？</p><p>贴一段Unity对RenderType的描述：</p><blockquote><p>RenderTypetag categorizes shaders into several predefined groups, e.g. is is an opaque shader, or an alpha-tested shader etc. This is used by <a href="https://docs.unity3d.com/Manual/SL-ShaderReplacement.html" target="_blank" rel="noopener">Shader Replacement</a> and in some cases used to produce <a href="https://docs.unity3d.com/Manual/SL-CameraDepthTexture.html" target="_blank" rel="noopener">camera’s depth texture</a>. </p></blockquote><p>可知，RenderType可以在替代渲染中用到，也可以用来生成相机的深度纹理。</p><h4 id="使用RenderType的方法"><a href="#使用RenderType的方法" class="headerlink" title="使用RenderType的方法"></a>使用RenderType的方法</h4><p>替换渲染通过使用 Camera.RenderWithShader 或者 Camera.SetReplacementShader 两个方法进行，这两个方法都接受两个参数，分别为 replacementShader 和 “替换标签” replacementTag，进行替换渲染时，场景中物体仍然使用他们的材质，但实际用于渲染的 Shader 已经改变，至于使用什么 Shader 进行渲染则由第二个参数 replacementTag 决定。规则如下：</p><ol><li><p>如果 replacementTag 为空，则场景中所有物体使用 replacementShader 进行渲染。</p></li><li><p>如果 replacementTag 不为空，将 replacementTag 的值记为 rtValue，继续进行以下验证：</p><ol><li><p>查询物体原有 Shader 中是否存在名为 rtValue 的 tag。如果不存在，该物体将不被渲染。</p></li><li><p>查询 replacementShader 中是否存在名为 rtValue 的 tag，且该 tag 的值和物体原有 Shader 中的名为 rtValue 的 tag 的值是否相同，如果不存在该 tag 或 tag 的值不相同，则该物体不被渲染。</p><p>当同时满足以上两个条件时，物体的原有 Shader 会被替换为 replacementShader 中对应的那个 SubShader（即 tag 值相同的 Shader ) 进行渲染。</p></li></ol></li></ol><h4 id="Unity中RenderType的默认值"><a href="#Unity中RenderType的默认值" class="headerlink" title="Unity中RenderType的默认值"></a>Unity中RenderType的默认值</h4><ol><li>Opaque：带有该标签的 ReplacementShader 可用于替换大多数 Shader（法线着色器、自发光着色器、反射着色器、地形着色器）</li><li>Transparent：用于半透明着色器</li><li>TransparentCutout：蒙面透明着色器</li><li>Background：天空盒子</li><li>Overlay：GUITexture、光晕着色器、闪光着色器</li><li>TreeOpaque：地形引擎中的树皮</li><li>TreeTransparentCutout：地形引擎中的树叶</li><li>TreeBillboard：地形引擎中的广告牌树</li><li>Grass：地形引擎中的草</li><li>GrassBillboard：地形引擎中的广告牌草</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Shader </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日语学习之品歌词</title>
+      <link href="/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%93%81%E6%AD%8C%E8%AF%8D.html"/>
+      <url>/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%93%81%E6%AD%8C%E8%AF%8D.html</url>
+      
+        <content type="html"><![CDATA[<p>鬼灭之刃    《红莲华》</p><p>sekai ni  u chi no me sa re te<br>世界  に  打 ち  の め  さ れ て<br>被世界击败</p><p>ma ke ru i mi o shi t ta<br>負 け る 意味  お し っ た<br>明白了失败的意义</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 语言学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日语假名之图像编码</title>
+      <link href="/%E6%97%A5%E8%AF%AD%E5%81%87%E5%90%8D%E4%B9%8B%E5%9B%BE%E5%83%8F%E7%BC%96%E7%A0%81.html"/>
+      <url>/%E6%97%A5%E8%AF%AD%E5%81%87%E5%90%8D%E4%B9%8B%E5%9B%BE%E5%83%8F%E7%BC%96%E7%A0%81.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="我这一生，尽是可耻之事"><a href="#我这一生，尽是可耻之事" class="headerlink" title="我这一生，尽是可耻之事"></a>我这一生，尽是可耻之事</h4><p>​                        – 太宰治</p><h4 id="我这一篇，尽是粗鄙之语"><a href="#我这一篇，尽是粗鄙之语" class="headerlink" title="我这一篇，尽是粗鄙之语"></a>我这一篇，尽是粗鄙之语</h4><p>​                        – エロ老师</p><p>以下为本人日语学习过程中为记忆假名而使用的荒诞的方法，可能不会对除我之外的许多人有帮助，<br>并且根据别人的经验之谈，是不太建议以这种看起来较为投机取巧的方式记忆假名的，因此各位看此篇<br>文章时浅尝辄止即可。如果此文对你产生了一些微小的帮助，本人不胜荣幸；如果此文令你感到不适，<br>请速速逃离。</p><h4 id="第一行假名"><a href="#第一行假名" class="headerlink" title="第一行假名"></a>第一行假名</h4><p>罗马音：                  a   i   u   e  o</p><p>平假名：                 あ  い  う  え  お</p><p>片假名：                 ア  イ  ウ  エ  オ</p><h4 id="第二行假名"><a href="#第二行假名" class="headerlink" title="第二行假名"></a>第二行假名</h4><p>罗马音：                 ka   ki   ku   ke   ko    </p><p>平假名：                 か  き  く  け  こ</p><p>片假名：                 カ  キ  ク  ケ  コ</p><p>ki：撑杆跳成功起飞<br>ko：小括号、中括号</p><h4 id="第三行假名"><a href="#第三行假名" class="headerlink" title="第三行假名"></a>第三行假名</h4><p>罗马音：                 sa   shi   su   se   so</p><p>平假名：                 さ  し  す  せ  そ</p><p>片假名：                 サ  シ  ス  セ  ソ</p><p>sa：撑杆跳失败摔骨折<br>shi：姜子牙溪上钓鱼愿者上钩</p><h4 id="第四行假名"><a href="#第四行假名" class="headerlink" title="第四行假名"></a>第四行假名</h4><p>罗马音：                ta     chi   tsu     te   to</p><p>平假名：                た　ち　つ　て　と</p><p>片假名：                タ    チ　ツ    テ　ト</p><p>ta：太阳变夕阳照在塔上<br>chi：５千7<br>tsu：屠夫把川少勾过来吃了<br>te：与chi对应<br>to：上山下乡拔萝卜</p><h4 id="第五行假名"><a href="#第五行假名" class="headerlink" title="第五行假名"></a>第五行假名</h4><p>罗马音：                na     ni      nu   ne    no</p><p>平假名：                な　に　ぬ　ね　の</p><p>片假名：                ナ    ニ　ヌ    ネ　ノ</p><p>na：四爷废了叶赫那拉氏变寡人<br>ni：立人+二 –》 仁<br>nu：奴隶<br>ne：有权有势的快乐<br>no：91罗先生</p><h4 id="第六行假名"><a href="#第六行假名" class="headerlink" title="第六行假名"></a>第六行假名</h4><p>罗马音：                ha     hi    hu　he   ho</p><p>平假名：                は　ひ　ふ　へ　ほ</p><p>片假名：                ハ    ヒ　フ    ヘ　ホ</p><p>ha：哈尔滨房东押一付八<br>hi：荆轲say　hi匕首现，秦王绕柱而环走<br>hu：小夫被胖虎一巴掌扇飞<br>hehe：女神今天又对我呵呵笑了真开心<br>ho：钻木取火</p><h4 id="第七行假名"><a href="#第七行假名" class="headerlink" title="第七行假名"></a>第七行假名</h4><p>罗马音：                ma     mi    mu　me    mo</p><p>平假名：                ま　み　む  め　も</p><p>片假名：                マ    ミ　ム    メ　モ</p><p>ma：厉兵秣马修断矛<br>mi：阿尔法狗抽出3米大刀<br>mu：克己废公慕容复<br>me：女神X我么么哒<br>mo：首尾不相顾 毛</p><h4 id="第八行假名"><a href="#第八行假名" class="headerlink" title="第八行假名"></a>第八行假名</h4><p>罗马音：                ya     i   yu      e   yo</p><p>平假名：                や　い　ゆ　え　よ</p><p>片假名：                ヤ    イ　ユ    エ　ヨ</p><p>yu：周幽王怀揽褒姒城上戏诸侯<br>yo：上寻下yo</p><h4 id="第九行假名"><a href="#第九行假名" class="headerlink" title="第九行假名"></a>第九行假名</h4><p>罗马音：                ra     ri    ru　re    ro</p><p>平假名：                ら  り  る  れ  ろ</p><p>片假名：                ラ    リ　ル  レ　ロ</p><p>ra：la是第五个音<br>ri：帅的让女神失去卫生巾<br>ru：大胸小三怀孕生子成功上位<br>re：札幌一夜东京热，回家失去另一半<br>ro：ro萝莉有3好：身轻体柔易工口</p><h4 id="第十行假名"><a href="#第十行假名" class="headerlink" title="第十行假名"></a>第十行假名</h4><p>罗马音：                wa     i     u     e     wo</p><p>平假名：                わ　い　う　え　を</p><p>片假名：                ワ    イ　ウ    エ　ヲ</p><p>wa:娃读一半书，仅得一半屋（ウ）<br>wo：我一脚踩空，是祸非福（F）</p><p>n<br>ん<br>ン</p><p>n：伸长了脖子</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 语言学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/hello-world.html"/>
+      <url>/hello-world.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
