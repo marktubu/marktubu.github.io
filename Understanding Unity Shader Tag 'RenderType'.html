@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Mon Sep 02 2019 15:41:24 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 02 2019 15:47:26 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 11 2019 14:27:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "https://marktubu.github.io/Understanding Unity Shader Tag 'RenderType'.html",
     "headline": "理解RenderType",
     "datePublished": "Mon Sep 02 2019 15:41:24 GMT+0800",
-    "dateModified": "Mon Sep 02 2019 15:47:26 GMT+0800",
+    "dateModified": "Wed Sep 11 2019 14:27:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "marktubu",
@@ -370,8 +370,15 @@
     <!-- Paradox Post Header -->
     
         
-            <!-- Pure Thumbnail -->
-            <div class="post_thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#00BAFF !important">
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 2 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
         
     
             <p class="article-headline-p">
@@ -492,12 +499,16 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="RenderType的作用"><a href="#RenderType的作用" class="headerlink" title="RenderType的作用"></a>RenderType的作用</h4><p>李白说：天生我材必有用。那么RenderType的作用到底是什么呢？</p>
+        <br>
+
+<h4 id="RenderType的作用"><a href="#RenderType的作用" class="headerlink" title="RenderType的作用"></a>RenderType的作用</h4><p>李白说：天生我材必有用。那么RenderType的作用到底是什么呢？</p>
 <p>贴一段Unity对RenderType的描述：</p>
 <blockquote>
 <p>RenderTypetag categorizes shaders into several predefined groups, e.g. is is an opaque shader, or an alpha-tested shader etc. This is used by <a href="https://docs.unity3d.com/Manual/SL-ShaderReplacement.html" target="_blank" rel="noopener">Shader Replacement</a> and in some cases used to produce <a href="https://docs.unity3d.com/Manual/SL-CameraDepthTexture.html" target="_blank" rel="noopener">camera’s depth texture</a>. </p>
 </blockquote>
 <p>可知，RenderType可以在替代渲染中用到，也可以用来生成相机的深度纹理。</p>
+<br>
+
 <h4 id="使用RenderType的方法"><a href="#使用RenderType的方法" class="headerlink" title="使用RenderType的方法"></a>使用RenderType的方法</h4><p>替换渲染通过使用 Camera.RenderWithShader 或者 Camera.SetReplacementShader 两个方法进行，这两个方法都接受两个参数，分别为 replacementShader 和 “替换标签” replacementTag，进行替换渲染时，场景中物体仍然使用他们的材质，但实际用于渲染的 Shader 已经改变，至于使用什么 Shader 进行渲染则由第二个参数 replacementTag 决定。规则如下：</p>
 <ol>
 <li><p>如果 replacementTag 为空，则场景中所有物体使用 replacementShader 进行渲染。</p>
@@ -512,6 +523,8 @@
 </ol>
 </li>
 </ol>
+<br>
+
 <h4 id="Unity中RenderType的默认值"><a href="#Unity中RenderType的默认值" class="headerlink" title="Unity中RenderType的默认值"></a>Unity中RenderType的默认值</h4><ol>
 <li>Opaque：带有该标签的 ReplacementShader 可用于替换大多数 Shader（法线着色器、自发光着色器、反射着色器、地形着色器）</li>
 <li>Transparent：用于半透明着色器</li>
@@ -554,8 +567,8 @@
             }
           .donate_bar a.btn_donate{
             display: inline-block;
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             background: url("/img/reward.png") no-repeat;
             _background: url("/img/reward.png") no-repeat;
        
