@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Unity Shader 属性修饰符总结（水）</title>
+      <link href="/Unity%20Shader%20%E5%B1%9E%E6%80%A7%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93%EF%BC%88%E6%B0%B4%EF%BC%89.html"/>
+      <url>/Unity%20Shader%20%E5%B1%9E%E6%80%A7%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93%EF%BC%88%E6%B0%B4%EF%BC%89.html</url>
+      
+        <content type="html"><![CDATA[<br> <p>Unity Shader 属性修饰符总结，方便查阅  </p><br>  <h4 id="属性修饰符简介"><a href="#属性修饰符简介" class="headerlink" title="属性修饰符简介"></a>属性修饰符简介</h4><blockquote><p>在任何属性前面，可以在方括号中指定可选属性。这些属性要么可以被Unity识别，要么可以通过指示自己的MaterialPropertyDrawer类来控制这些属性在 Material Inspector 中的呈现方式。</p></blockquote><br>  <p>Unity识别的属性包含以下几种：</p><ol><li><p>[HideInInspector]：不在 Material Inspector 中显示属性值</p></li><li><p>[NoScaleOffset]：Material Inspector 不会显示具有此属性的纹理属性的 texture tiling/offset 字段</p></li><li><p>[Normal]：表示此纹理需要是一张法线贴图</p></li><li><p>[HDR]：表示此纹理属性需要一张高动态范围（HDR）纹理</p></li><li><p>[Gamma]：对于一个类型为 Float / Vector 的属性，默认情况下不会对它的值作任何转换，但如果在此属性前加上了 [Gamma] 修饰符，则表示它们的值处于 sRGB space，在 shader 中使用时需要先将其值转换到 linear space（转换过程自动完成）。</p></li><li><p>[PerRendererData]：属性用此修饰符修饰时，使用同一个 Material 的各个 Renderer 可以独立的改变该属性值。好处是，1.提升性能；2.在改变某一个 Renderer 的该属性时，Unity 不会自动创建一个新的 Material。缺点是，尽管各个 Renderer 使用同一个材质，但是 MaterialPropertyBlock 会使 Dynamic Batching 失效。使用示例参考下面链接：</p><p><a href="http://thomasmountainborn.com/2016/05/25/materialpropertyblocks/" target="_blank" rel="noopener">PerRenderData的应用</a></p></li><li><p>[Toggle]：材质球调试器, 使用勾选的方式显示</p></li><li><p>[IntRange]：材质球调试器, 滑块拖动时将以整数方式变化</p></li><li><p>[Enum(UnityEngine.Rendering.CullMode)]：材质球调试器, 显示下拉选择, 内置枚举</p></li><li><p>[Enum(MyEnum_0,0,MyEnum_1,1)]：材质球调试器, 显示下拉选择, 自定义枚举</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity Shader 内置变量</title>
       <link href="/Unity%20Shader%20%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F.html"/>
       <url>/Unity%20Shader%20%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F.html</url>
