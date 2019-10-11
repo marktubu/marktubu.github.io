@@ -47,7 +47,7 @@
     
     <title>
         
-            文章分类 | 
+            STL源码赏析之alloc | 
         
         Marktubu&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",算法,C++">
     <meta name="theme-color" content="#00BAFF">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Marktubu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://marktubu.github.io/categories/">
+    <meta name="msapplication-starturl" content="https://marktubu.github.io/STL源码赏析之alloc.html">
     <meta name="msapplication-navbutton-color" content="#00BAFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Marktubu&#39;s Blog">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://marktubu.github.io/categories/">
+    <meta property="og:url" content="https://marktubu.github.io/STL源码赏析之alloc.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="文章分类 | Marktubu&#39;s Blog">
+    <meta property="og:title" content="STL源码赏析之alloc | Marktubu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="算法"> <meta property="og:article:tag" content="C++"> 
 
+    
+        <meta property="article:published_time" content="Fri Oct 11 2019 15:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Fri Oct 11 2019 15:15:23 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://marktubu.github.io/categories/index.html">
+        <link rel="canonical" href="https://marktubu.github.io/STL源码赏析之alloc.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://marktubu.github.io/STL源码赏析之alloc.html",
+    "headline": "STL源码赏析之alloc",
+    "datePublished": "Fri Oct 11 2019 15:00:00 GMT+0800",
+    "dateModified": "Fri Oct 11 2019 15:15:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "marktubu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "The world is in my mind."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Marktubu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",算法,C++",
+    "description": "",
+}
+</script>
 
 
     
@@ -290,6 +323,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#空间配置器"><span class="post-toc-number">1.</span> <span class="post-toc-text">空间配置器</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -316,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                文章分类
+                STL源码赏析之alloc
             </p>
         </div>
 
@@ -335,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>marktubu</strong>
-        <span>8月 29, 2019</span>
+        <span>10月 11, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -352,6 +418,15 @@
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/算法/">算法</a>
+    </ul>
     
 
     <!-- Share -->
@@ -378,7 +453,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=文章分类&url=https://marktubu.github.io/categories/index.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=STL源码赏析之alloc&url=https://marktubu.github.io/STL源码赏析之alloc.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -387,7 +462,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=文章分类&url=https://marktubu.github.io/categories/index.html&via=marktubu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=STL源码赏析之alloc&url=https://marktubu.github.io/STL源码赏析之alloc.html&via=marktubu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -405,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=文章分类&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=STL源码赏析之alloc&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/STL源码赏析之alloc.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -424,7 +499,28 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <br> 
+
+<h4 id="空间配置器"><a href="#空间配置器" class="headerlink" title="空间配置器"></a>空间配置器</h4><blockquote>
+<p>空间配置器分为两级，第一级用于分配大于128字节的内存，第二级用于分配小于等于128字节的内存</p>
+</blockquote>
+<br>  
+
+<p>Alloc.h</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">include &lt;cstdlib&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> MySTL &#123;</span><br><span class="line">	<span class="comment">//空间配置器</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">alloc</span>&#123;</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="comment">//8字节对齐</span></span><br><span class="line">		<span class="keyword">enum</span> &#123; ALIGN = <span class="number">8</span> &#125;;</span><br><span class="line">		<span class="comment">//空闲链表最大node为128字节</span></span><br><span class="line">		<span class="keyword">enum</span> &#123; MAXBYTES = <span class="number">128</span> &#125;;</span><br><span class="line">		<span class="comment">//空闲链表数目</span></span><br><span class="line">		<span class="keyword">enum</span> &#123; NFREELISTS = <span class="number">16</span> &#125;; <span class="comment">//(MAXBYTES / ALIGN)</span></span><br><span class="line">		<span class="keyword">enum</span> &#123; NOBJS = <span class="number">20</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">union</span> obj &#123;</span><br><span class="line">			<span class="keyword">union</span> obj* next;</span><br><span class="line">			<span class="keyword">char</span> client[<span class="number">1</span>];</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//16个空闲链表的head节点</span></span><br><span class="line">		<span class="keyword">static</span> obj* free_list[NFREELISTS];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="comment">//内存池空闲部分的开始</span></span><br><span class="line">		<span class="keyword">static</span> <span class="keyword">char</span>* start_free;</span><br><span class="line">		<span class="comment">//内存池空闲部分的结束</span></span><br><span class="line">		<span class="keyword">static</span> <span class="keyword">char</span>* end_free;</span><br><span class="line">		<span class="keyword">static</span> <span class="keyword">size_t</span> heap_size;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="comment">//8字节对齐</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> size_t <span class="title">ROUND_UP</span><span class="params">(<span class="keyword">size_t</span> bytes)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> ((bytes+ (<span class="keyword">size_t</span>)ALIGN - <span class="number">1</span>) &amp; ~((<span class="keyword">size_t</span>)ALIGN - <span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//获得bytes对应的free_list</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> size_t <span class="title">FREELIST_INDEX</span><span class="params">(<span class="keyword">size_t</span> bytes)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> (((bytes)+(<span class="keyword">size_t</span>)ALIGN - <span class="number">1</span>) / (<span class="keyword">size_t</span>)ALIGN - <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//某一空闲链表空间不足，从内存池中重新分配</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> <span class="keyword">void</span>* <span class="title">refill</span><span class="params">(<span class="keyword">size_t</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//扩展内存池</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> <span class="keyword">char</span>* <span class="title">chunk_alloc</span><span class="params">(<span class="keyword">size_t</span> size, <span class="keyword">size_t</span>&amp; nobjs)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="comment">//分配</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> <span class="keyword">void</span>* <span class="title">allocate</span><span class="params">(<span class="keyword">size_t</span> bytes)</span></span>;</span><br><span class="line">		<span class="comment">//释放</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deallocate</span><span class="params">(<span class="keyword">void</span>* ptr, <span class="keyword">size_t</span> bytes)</span></span>;</span><br><span class="line">		<span class="comment">//重新分配</span></span><br><span class="line">		<span class="function"><span class="keyword">static</span> <span class="keyword">void</span>* <span class="title">reallocate</span><span class="params">(<span class="keyword">void</span>* ptr, <span class="keyword">size_t</span> old_sz, <span class="keyword">size_t</span> new_sz)</span></span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Alloc.cpp</p>
+<br>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">include <span class="string">"../Alloc.h"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> MySTL</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">char</span>* alloc::start_free = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span>* alloc::end_free = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">size_t</span> alloc::heap_size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	alloc::obj* alloc::free_list[NFREELISTS] = &#123;</span><br><span class="line">		<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">void</span>* alloc::allocate(<span class="keyword">size_t</span> bytes) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (bytes &gt; (<span class="keyword">size_t</span>)MAXBYTES)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">malloc</span>(bytes);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">size_t</span> index = FREELIST_INDEX(bytes);</span><br><span class="line">		alloc::obj* <span class="built_in">list</span> = free_list[index];</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">list</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			free_list[index] = <span class="built_in">list</span>-&gt;next;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> refill(ROUND_UP(bytes));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//如果大于MAXBYTES则直接free。</span></span><br><span class="line">	<span class="comment">//如果小于MAXBYTES则将对应的node重新加入空闲链表</span></span><br><span class="line">	<span class="keyword">void</span> alloc::deallocate(<span class="keyword">void</span>* ptr, <span class="keyword">size_t</span> bytes)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (bytes &gt; (<span class="keyword">size_t</span>)MAXBYTES)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">free</span>(ptr);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">size_t</span> index = FREELIST_INDEX(bytes);</span><br><span class="line">			obj* node = <span class="keyword">static_cast</span>&lt;obj*&gt;(ptr);</span><br><span class="line">			node-&gt;next = free_list[index];</span><br><span class="line">			free_list[index] = node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">void</span>* alloc::reallocate(<span class="keyword">void</span>* ptr, <span class="keyword">size_t</span> old_sz, <span class="keyword">size_t</span> new_sz)</span><br><span class="line">	&#123;</span><br><span class="line">		deallocate(ptr, old_sz);</span><br><span class="line">		ptr = allocate(new_sz);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">void</span>* alloc::refill(<span class="keyword">size_t</span> bytes)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">size_t</span> nobjs = (<span class="keyword">size_t</span>)NOBJS;</span><br><span class="line">		<span class="keyword">char</span>* chunk = chunk_alloc(bytes, nobjs);</span><br><span class="line"></span><br><span class="line">		obj** my_free_list = <span class="number">0</span>;</span><br><span class="line">		obj* current_obj = <span class="number">0</span>;</span><br><span class="line">		obj* next_obj = <span class="number">0</span>;</span><br><span class="line">		obj* result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (nobjs == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> chunk;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			my_free_list = free_list + FREELIST_INDEX(bytes);</span><br><span class="line">			<span class="comment">//此时的my_free_list指向分配的chunk内存的index为1的部分</span></span><br><span class="line">			*my_free_list = next_obj = (obj*)(chunk + bytes);</span><br><span class="line">			result = (obj*)chunk;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">1</span>;; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				current_obj = next_obj;</span><br><span class="line">				next_obj = (obj*)((<span class="keyword">char</span>*)next_obj + bytes);</span><br><span class="line">				<span class="keyword">if</span> (i == nobjs - <span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					current_obj-&gt;next = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					current_obj = next_obj;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span>* alloc::chunk_alloc(<span class="keyword">size_t</span> bytes, <span class="keyword">size_t</span>&amp; nobjs)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span>* result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">size_t</span> total_bytes = bytes * nobjs;</span><br><span class="line">		<span class="keyword">size_t</span> bytes_left = end_free - start_free;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//完全可以满意内存要求的情况</span></span><br><span class="line">		<span class="keyword">if</span> (bytes_left &gt;= total_bytes)</span><br><span class="line">		&#123;</span><br><span class="line">			result = start_free;</span><br><span class="line">			start_free += total_bytes;</span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//部分满足内存要求的情况</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bytes_left &gt;= bytes)</span><br><span class="line">		&#123;</span><br><span class="line">			result = start_free;</span><br><span class="line">			nobjs = (<span class="keyword">size_t</span>) (bytes_left / bytes);</span><br><span class="line">			total_bytes = bytes * nobjs;</span><br><span class="line">			start_free += total_bytes;</span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//完全不满足内存要求的情况</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//尝试将剩余的空闲字节加入到空闲链表中</span></span><br><span class="line">			<span class="keyword">if</span> (bytes_left &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				obj** my_free_list = free_list + FREELIST_INDEX(bytes_left);</span><br><span class="line">				((obj*)start_free)-&gt;next = *my_free_list;</span><br><span class="line">				*my_free_list = (obj*)start_free;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">size_t</span> bytes_to_get = <span class="number">2</span> * total_bytes + ROUND_UP(heap_size &gt;&gt; <span class="number">4</span>);</span><br><span class="line">			start_free = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(bytes_to_get);</span><br><span class="line">			<span class="comment">//malloc失败，证明heap不足，尝试从空闲链表中寻找足够大的空间</span></span><br><span class="line">			<span class="keyword">if</span> (!start_free)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">size_t</span> i = bytes; i &lt;= MAXBYTES; i += ALIGN)</span><br><span class="line">				&#123;</span><br><span class="line">					obj** my_free_list = free_list + FREELIST_INDEX(i);</span><br><span class="line">					obj* p = *my_free_list;</span><br><span class="line">					<span class="keyword">if</span> (p != <span class="number">0</span>)</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="comment">//p!=0说明找到空间可以分配</span></span><br><span class="line">						*my_free_list = p-&gt;next;</span><br><span class="line">						start_free = (<span class="keyword">char</span>*)p;</span><br><span class="line">						end_free = start_free + i;</span><br><span class="line">						<span class="comment">//递归调用以调整nobjs的值</span></span><br><span class="line">						<span class="keyword">return</span> chunk_alloc(bytes, nobjs);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				end_free = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			heap_size += bytes_to_get;</span><br><span class="line">			end_free = start_free + bytes_to_get;</span><br><span class="line">			<span class="comment">//递归调用以调整nobjs的值</span></span><br><span class="line">			<span class="keyword">return</span> chunk_alloc(bytes, nobjs);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -432,7 +528,7 @@
                             This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 License</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://marktubu.github.io/categories/index.html">https://marktubu.github.io/categories/index.html</a>
+                        <strong>本文链接：</strong><a href="https://marktubu.github.io/STL源码赏析之alloc.html">https://marktubu.github.io/STL源码赏析之alloc.html</a>
                     </p>
                 </blockquote>
         
@@ -595,6 +691,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/八皇后问题.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -771,6 +875,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
