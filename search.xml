@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Unity问题解决</title>
+      <link href="/Unity%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html"/>
+      <url>/Unity%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Unity相关问题汇总"><a href="#Unity相关问题汇总" class="headerlink" title="Unity相关问题汇总"></a>Unity相关问题汇总</h3><h4 id="Android打包问题"><a href="#Android打包问题" class="headerlink" title="Android打包问题"></a>Android打包问题</h4><h5 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h5><blockquote><p>Unable to list target platforms. Please make sure the android sdk path is correct. See the Console for more details.</p></blockquote><h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><p>1.找到Android SDK安装路径：</p><p>​    windows系统为：C:\Users\YourUsername\AppData\Local\Android\sdk</p><p>​    mac osx为：/Users/username/Library/Android/sdk</p><p>2.将该文件夹下的 tools 文件夹重命名或者直接删除。</p><p>3.下载新的 SDK tool：</p><p>​    windows版本地址：<a href="http://dl-ssl.google.com/android/repository/tools_r25.2.5-windows.zip" target="_blank" rel="noopener">http://dl-ssl.google.com/android/repository/tools_r25.2.5-windows.zip</a></p><p>​    mac osx版本地址：<a href="https://dl.google.com/android/repository/tools_r25.2.3-macosx.zip" target="_blank" rel="noopener">https://dl.google.com/android/repository/tools_r25.2.3-macosx.zip</a></p><p>4.下载后解压到 SDK文件夹下。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> Issues </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STL源码赏析之alloc</title>
       <link href="/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Balloc.html"/>
       <url>/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Balloc.html</url>
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> Unity </tag>
-            
             <tag> Shader </tag>
+            
+            <tag> Unity </tag>
             
         </tags>
       
