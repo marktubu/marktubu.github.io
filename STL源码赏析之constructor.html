@@ -47,7 +47,7 @@
     
     <title>
         
-            tags | 
+            STL源码赏析之constructor | 
         
         Marktubu&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",C++,STL">
     <meta name="theme-color" content="#00BAFF">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Marktubu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://marktubu.github.io/tags/">
+    <meta name="msapplication-starturl" content="https://marktubu.github.io/STL源码赏析之constructor.html">
     <meta name="msapplication-navbutton-color" content="#00BAFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Marktubu&#39;s Blog">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://marktubu.github.io/tags/">
+    <meta property="og:url" content="https://marktubu.github.io/STL源码赏析之constructor.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | Marktubu&#39;s Blog">
+    <meta property="og:title" content="STL源码赏析之constructor | Marktubu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="C++"> <meta property="og:article:tag" content="STL"> 
 
+    
+        <meta property="article:published_time" content="Tue Oct 15 2019 00:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 15 2019 11:26:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://marktubu.github.io/tags/index.html">
+        <link rel="canonical" href="https://marktubu.github.io/STL源码赏析之constructor.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://marktubu.github.io/STL源码赏析之constructor.html",
+    "headline": "STL源码赏析之constructor",
+    "datePublished": "Tue Oct 15 2019 00:00:00 GMT+0800",
+    "dateModified": "Tue Oct 15 2019 11:26:31 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "marktubu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "The world is in my mind."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Marktubu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C++,STL",
+    "description": "",
+}
+</script>
 
 
     
@@ -290,60 +323,396 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Very-informally"><span class="post-toc-number">1.</span> <span class="post-toc-text">Very informally:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Less-informally"><span class="post-toc-number">2.</span> <span class="post-toc-text">Less informally:</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 2 + 1);
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/C/" style="font-size: 25.5px; color: #4b4b4b">C++</a> <a href="/tags/Issues/" style="font-size: 16px; color: #757575">Issues</a> <a href="/tags/STL/" style="font-size: 16px; color: #757575">STL</a> <a href="/tags/Shader/" style="font-size: 25.5px; color: #4b4b4b">Shader</a> <a href="/tags/Unity/" style="font-size: 35px; color: #212121">Unity</a> <a href="/tags/hexo/" style="font-size: 25.5px; color: #4b4b4b">hexo</a> <a href="/tags/回溯/" style="font-size: 16px; color: #757575">回溯</a> <a href="/tags/日语/" style="font-size: 25.5px; color: #4b4b4b">日语</a> <a href="/tags/算法/" style="font-size: 25.5px; color: #4b4b4b">算法</a>
+        
+    
+            <p class="article-headline-p">
+                STL源码赏析之constructor
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>marktubu</strong>
+        <span>10月 15, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/STL/">STL</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=STL源码赏析之constructor&url=https://marktubu.github.io/STL源码赏析之constructor.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=STL源码赏析之constructor&url=https://marktubu.github.io/STL源码赏析之constructor.html&via=marktubu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=STL源码赏析之constructor&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/STL源码赏析之constructor.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>STL中包含五个用于内存处理的全局函数，constructor.h包含其中的两个：destroy, construct。</p>
+</blockquote>
+<p>constructor.h源码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">include &lt;<span class="keyword">new</span>&gt;</span><br><span class="line"></span><br><span class="line">include <span class="string">"TypeTraits.h"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> MySTL &#123;</span><br><span class="line">	<span class="keyword">template</span>&lt;class T1, class T2&gt;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">void</span> construct(T1* ptr1, <span class="keyword">const</span> T2&amp; value)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">new</span>(ptr1) T1(value);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class">	<span class="title">inline</span> <span class="title">void</span> <span class="title">destroy</span>(<span class="title">T</span>* <span class="title">ptr</span>)</span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		ptr-&gt;~T();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class">	<span class="title">inline</span> <span class="title">void</span> _<span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>, _<span class="title">true_type</span>)</span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class">	<span class="title">inline</span> <span class="title">void</span> _<span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>, _<span class="title">false_type</span>)</span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">for</span> (; first != last; ++first)</span><br><span class="line">		&#123;</span><br><span class="line">			destroy(&amp;*first);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class">	<span class="title">inline</span> <span class="title">void</span> <span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>)</span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">typedef</span> <span class="keyword">typename</span> _type_traits&lt;ForwardIterator&gt;::is_POD_type is_POD_type;</span><br><span class="line">		_destroy(first, last, is_POD_type());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>constructor.h 中包含一个 construct 函数和两个版本的 destroy 函数。</p>
+<p>construct 函数的实现比较简单，使用 placement new 通过 T1的拷贝构造函数在已分配的内存上构造一个对象。</p>
+<p>关于 placement new :</p>
+<blockquote>
+<p>Placement new is a variation new operator in C++. Normal new operator does two things :<br>        (1) Allocates memory<br>        (2) Constructs an object in allocated memory.</p>
+<p>Placement new allows us to separate above two things. In placement new, we can pass a preallocated memory and construct an object in the passed memory.</p>
+</blockquote>
+<p>destroy 函数包含两个版本，直接析构版本和迭代器版本。</p>
+<ol>
+<li>第一个版本直接调用传入指针所指对象的析构函数。</li>
+<li>第二个版本先判断传入类型是否是 pod type，如果是，则不必调用析构函数，如果不是，则依次调用析构函数。</li>
+</ol>
+<p>什么是 POD 类型：<a href="https://stackoverflow.com/questions/146452/what-are-pod-types-in-c" target="_blank" rel="noopener">POD</a></p>
+<blockquote>
+<h3 id="Very-informally"><a href="#Very-informally" class="headerlink" title="Very informally:"></a>Very informally:</h3><p>A POD is a type (including classes) where the C++ compiler guarantees that there will be no “magic” going on in the structure: for example hidden pointers to vtables, offsets that get applied to the address when it is cast to other types (at least if the target’s POD too), constructors, or destructors. Roughly speaking, a type is a POD when the only things in it are built-in types and combinations of them. The result is something that “acts like” a C type.</p>
+<h3 id="Less-informally"><a href="#Less-informally" class="headerlink" title="Less informally:"></a>Less informally:</h3><ul>
+<li><code>int</code>, <code>char</code>, <code>wchar_t</code>, <code>bool</code>, <code>float</code>, <code>double</code> are PODs, as are <code>long/short</code> and <code>signed/unsigned</code> versions of them.</li>
+<li>pointers (including pointer-to-function and pointer-to-member) are PODs,</li>
+<li><code>enums</code> are PODs</li>
+<li>a <code>const</code> or <code>volatile</code> POD is a POD.</li>
+<li>a <code>class</code>, <code>struct</code> or <code>union</code> of PODs is a POD provided that all non-static data members are <code>public</code>, and it has no base class and no constructors, destructors, or virtual methods. Static members don’t stop something being a POD under this rule. This rule has changed in C++11 and certain private members are allowed: <a href="https://stackoverflow.com/questions/4762788/can-a-class-with-all-private-members-be-a-pod-class/4762944#4762944" target="_blank" rel="noopener">Can a class with all private members be a POD class?</a></li>
+<li>Wikipedia is wrong to say that a POD cannot have members of type pointer-to-member. Or rather, it’s correct for the C++98 wording, but TC1 made explicit that pointers-to-member are POD.</li>
+</ul>
+</blockquote>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 License</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://marktubu.github.io/STL源码赏析之constructor.html">https://marktubu.github.io/STL源码赏析之constructor.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+
+    
+        <!-- css -->
+        <style type="text/css">
+            .center {
+                text-align: center;
+            }
+            #donate_guide.noActive,#donate_board.noActive  {
+                /*display: none;*/
+                height:0;
+                opacity:0;
+                visibility: hidden;
+            }
+          .donate_bar a.btn_donate{
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            background: url("/img/reward.png") no-repeat;
+            _background: url("/img/reward.png") no-repeat;
+       
+       
+            -webkit-transition: background 0s;
+            -moz-transition: background 0s;
+            -o-transition: background 0s;
+            -ms-transition: background 0s;
+            transition: background 0s;
+       
+          }
+          #donate_guide{
+            opacity:1;
+            visibility: visible;
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            transition: all .3s linear;
+          }
+          .donate_bar a.btn_donate:hover{ background-position: 0px -2px;}
+          .donate_bar .donate_txt {
+            display: block;
+            color: #9d9d9d;
+            font: 14px/2 "Microsoft Yahei";
+            margin-top:10px;
+          }
+          .bold{ font-weight: bold; }
+          @media screen and (max-width:500px) {
+            #donate_guide>a{
+              display:block;
+            }
+          }
+        </style>
+        <!-- /css -->
+       
+          <!-- Donate Module -->
+          <div id="donate_module">
+       
+          <!-- btn_donate & tips -->
+          <div id="donate_board" class="donate_bar center">
+              <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+            <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+            <span class="donate_txt">
+              Enjoy it ? Donate me !  真诚赞赏，手留余香
+            </span>
+       
+       
+          </div>
+          <!-- /btn_donate & tips -->
+       
+          <!-- donate guide -->
+       
+          <div id="donate_guide" class="donate_bar center noActive">
+                <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+
+                <!--<a href="/img/wechat.png" title="用微信扫一扫哦~" class="fancybox" rel="article0">-->
+                  <img src="/img/wechat.png" title="微信打赏" height="190px" width="190"/>
+                  <span class="donate_txt">
+                    用微信扫一扫哦~
+                  </span>
+                <!--</a>-->
+          
+                    &nbsp;&nbsp;
+                    <br />
+                <!--<a href="/img/alipay.png" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">-->
+                  <img src="/img/alipay.png" title="支付宝打赏" height="190px" width="190"/>
+
+                  <span class="donate_txt">
+                    用支付宝扫一扫即可~
+                  </span>
+                <!--</a>-->
+
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  真诚赞赏，手留余香
+                </span>
+       
+          </div>
+          <!-- /donate guide -->
+       
+          <!-- donate script -->
+          <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+              $('#donate_board').addClass('noActive');
+              $('#donate_guide').removeClass('noActive');
+            }
+          </script>
+          <!-- /donate script -->
+       
+       
+        </div>
+        <!-- /Donate Module -->
+        
 </div>
 
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+                
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjQ1NS8yMjk2Ng==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
 
+                
+            </div>
 
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/Unity问题解决.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -515,6 +884,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

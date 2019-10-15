@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>STL源码赏析之constructor</title>
+      <link href="/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Bconstructor.html"/>
+      <url>/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Bconstructor.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>STL中包含五个用于内存处理的全局函数，constructor.h包含其中的两个：destroy, construct。</p></blockquote><p>constructor.h源码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">include &lt;<span class="keyword">new</span>&gt;</span><br><span class="line"></span><br><span class="line">include <span class="string">"TypeTraits.h"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> MySTL &#123;</span><br><span class="line"><span class="keyword">template</span>&lt;class T1, class T2&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> construct(T1* ptr1, <span class="keyword">const</span> T2&amp; value)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">new</span>(ptr1) T1(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">destroy</span>(<span class="title">T</span>* <span class="title">ptr</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">ptr-&gt;~T();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> _<span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>, _<span class="title">true_type</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> _<span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>, _<span class="title">false_type</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">for</span> (; first != last; ++first)</span><br><span class="line">&#123;</span><br><span class="line">destroy(&amp;*first);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">destroy</span>(<span class="title">ForwardIterator</span> <span class="title">first</span>, <span class="title">ForwardIterator</span> <span class="title">last</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">typename</span> _type_traits&lt;ForwardIterator&gt;::is_POD_type is_POD_type;</span><br><span class="line">_destroy(first, last, is_POD_type());</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>constructor.h 中包含一个 construct 函数和两个版本的 destroy 函数。</p><p>construct 函数的实现比较简单，使用 placement new 通过 T1的拷贝构造函数在已分配的内存上构造一个对象。</p><p>关于 placement new :</p><blockquote><p>Placement new is a variation new operator in C++. Normal new operator does two things :<br>        (1) Allocates memory<br>        (2) Constructs an object in allocated memory.</p><p>Placement new allows us to separate above two things. In placement new, we can pass a preallocated memory and construct an object in the passed memory.</p></blockquote><p>destroy 函数包含两个版本，直接析构版本和迭代器版本。</p><ol><li>第一个版本直接调用传入指针所指对象的析构函数。</li><li>第二个版本先判断传入类型是否是 pod type，如果是，则不必调用析构函数，如果不是，则依次调用析构函数。</li></ol><p>什么是 POD 类型：<a href="https://stackoverflow.com/questions/146452/what-are-pod-types-in-c" target="_blank" rel="noopener">POD</a></p><blockquote><h3 id="Very-informally"><a href="#Very-informally" class="headerlink" title="Very informally:"></a>Very informally:</h3><p>A POD is a type (including classes) where the C++ compiler guarantees that there will be no “magic” going on in the structure: for example hidden pointers to vtables, offsets that get applied to the address when it is cast to other types (at least if the target’s POD too), constructors, or destructors. Roughly speaking, a type is a POD when the only things in it are built-in types and combinations of them. The result is something that “acts like” a C type.</p><h3 id="Less-informally"><a href="#Less-informally" class="headerlink" title="Less informally:"></a>Less informally:</h3><ul><li><code>int</code>, <code>char</code>, <code>wchar_t</code>, <code>bool</code>, <code>float</code>, <code>double</code> are PODs, as are <code>long/short</code> and <code>signed/unsigned</code> versions of them.</li><li>pointers (including pointer-to-function and pointer-to-member) are PODs,</li><li><code>enums</code> are PODs</li><li>a <code>const</code> or <code>volatile</code> POD is a POD.</li><li>a <code>class</code>, <code>struct</code> or <code>union</code> of PODs is a POD provided that all non-static data members are <code>public</code>, and it has no base class and no constructors, destructors, or virtual methods. Static members don’t stop something being a POD under this rule. This rule has changed in C++11 and certain private members are allowed: <a href="https://stackoverflow.com/questions/4762788/can-a-class-with-all-private-members-be-a-pod-class/4762944#4762944" target="_blank" rel="noopener">Can a class with all private members be a POD class?</a></li><li>Wikipedia is wrong to say that a POD cannot have members of type pointer-to-member. Or rather, it’s correct for the C++98 wording, but TC1 made explicit that pointers-to-member are POD.</li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> STL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity问题解决</title>
       <link href="/Unity%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html"/>
       <url>/Unity%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</url>
@@ -47,9 +74,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -101,9 +128,9 @@
       
         <tags>
             
-            <tag> Shader </tag>
-            
             <tag> Unity </tag>
+            
+            <tag> Shader </tag>
             
         </tags>
       
@@ -217,6 +244,31 @@
       <url>/hello-world.html</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>template</title>
+      <link href="/template.html"/>
+      <url>/template.html</url>
+      
+        <content type="html"><![CDATA[<p>This is the template post.</p>]]></content>
       
       
       <categories>
