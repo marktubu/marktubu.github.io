@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Understanding C++ keywords</title>
+      <link href="/Understanding%20C++%20keywords.html"/>
+      <url>/Understanding%20C++%20keywords.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="C-关键字详解"><a href="#C-关键字详解" class="headerlink" title="C++关键字详解"></a>C++关键字详解</h3><br> <h4 id="typename"><a href="#typename" class="headerlink" title="typename"></a>typename</h4><h5 id="typename-不太常见的一种用法"><a href="#typename-不太常见的一种用法" class="headerlink" title="typename 不太常见的一种用法"></a>typename 不太常见的一种用法</h5><p>C++模板的常见写法是这样的：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; ...</span></span><br></pre></td></tr></table></figure><p>当然，你可以使用 typename 替代 class 表达相同的意思：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; ...</span><br></pre></td></tr></table></figure><p>以上两例中，typename 和 class 都可以用来表明模板参数是一个类型。</p><p>然而在实际使用中，建议在上例的情况下使用 class 而不是 typename 关键字，而将 typename 用于一些更需要它的情景中（即 typename 的另一种用法），以避免混淆。</p><br> <h5 id="更加常见的-typename-用法"><a href="#更加常见的-typename-用法" class="headerlink" title="更加常见的 typename 用法"></a>更加常见的 typename 用法</h5><p>首先弄明白两组概念：</p><h6 id="qualified-unqualified-name："><a href="#qualified-unqualified-name：" class="headerlink" title="qualified/unqualified  name："></a>qualified/unqualified  name：</h6><blockquote><p><strong>Short Explain:</strong> A qualified name is one that has some sort of indication of where it belongs, e.g. a class specification, namespace specification, etc. An unqualified name is one that isn’t qualified. </p><p><strong>Example:</strong></p><p> Given: </p></blockquote><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">A</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">B</span> &#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">F</span><span class="params">()</span></span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><blockquote><ul><li><code>A</code> is an <em>unqualified-id</em>.</li><li><code>::A</code> is a <em>qualified-id</em> but has no <em>nested-name-specifier</em>.</li><li><code>A::B</code> is a <em>qualified-id</em> and <code>A::</code> is a <em>nested-name-specifier</em>.</li><li><code>::A::B</code> is a <em>qualified-id</em> and <code>A::</code> is a <em>nested-name-specifier</em>.</li><li><code>A::B::F</code> is a <em>qualified-id</em> and both <code>B::</code> and <code>A::B::</code> are <em>nested-name-specifiers</em>.</li><li><code>::A::B::F</code> is a <em>qualified-id</em> and both <code>B::</code> and <code>A::B::</code> are <em>nested-name-specifiers</em>.</li></ul></blockquote><br> <h6 id="dependent-non-dependent-name"><a href="#dependent-non-dependent-name" class="headerlink" title="dependent/non-dependent name"></a>dependent/non-dependent name</h6><blockquote><p>Given:</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">MyClass</span> &#123;</span></span><br><span class="line">   <span class="keyword">int</span> i;</span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vi;</span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator vitr;</span><br><span class="line">   </span><br><span class="line">   T t;</span><br><span class="line">   <span class="built_in">vector</span>&lt;T&gt; vt;</span><br><span class="line">   <span class="built_in">vector</span>&lt;T&gt;::iterator viter;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><blockquote><p>The types of the first three declarations are known at the time of the template declaration. However, the types of the second set of three declarations are <em>not</em> known until the point of instantiation, because they depend on the template parameter <code>T</code>.</p><p>The names <code>T</code>, <code>vector</code>, and <code>vector::iterator</code> are called <strong>dependent names</strong>, and the types they name are dependent types. The names used in the first three declarations are called <strong>non-dependent names</strong>, at the types are non-dependent types.</p></blockquote><br> <br> <p>Known about the above two pairs of concepts, We can then easily explain the main usage of the keyword ‘typename’.</p><p>考虑以下的情况：</p><p>下面是一个普通的模板函数：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">foo</span>() &#123;</span></span><br><span class="line">   T::iterator * iter;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序员可能会定义以下的类：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ContainsAType</span> &#123;</span></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">iterator</span> &#123;</span> ... &#125;:</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>然后使用类型 ContainsAType 实例化 foo 函数：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo&lt;ContainsAType&gt;();</span><br></pre></td></tr></table></figure><p>这时，foo 函数中的 iter 表示一个指向类 iterator 的指针，这样做完全没有问题。</p><br> <p>然而事实并不总是如想象中那样美好，如果有别人定义了以下变量：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ContainsAType</span> &#123;</span></span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">int</span> iterator;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>那么上面的函数调用：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo&lt;ContainsAType&gt;();</span><br></pre></td></tr></table></figure><p>就会变成 ContainsAType 类的 iterator 对象和 iter 相乘。</p><br> <p><strong>为避免这种情况的出现，需要注意：</strong>在定义一个  <strong>qualified dependent type</strong> 的时候，需要在其前面加上 <strong>typename</strong> 关键字：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">foo</span>() &#123;</span></span><br><span class="line">   <span class="keyword">typename</span> T::iterator * iter;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br> <br> <p><strong>Links:</strong></p><p><a href="http://pages.cs.wisc.edu/~driscoll/typename.html" target="_blank" rel="noopener">A Description of the C++ ‘typename’ keyword</a></p><p><a href="https://stackoverflow.com/questions/7257563/what-are-qualified-id-name-and-unqualified-id-name" target="_blank" rel="noopener">What are qualified-id/name and unqualified-id/name?</a></p><p><a href="https://stackoverflow.com/questions/1600936/officially-what-is-typename-for" target="_blank" rel="noopener">Officially, what is typename for?</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> keyword </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>唐代诗人的非自然死亡</title>
+      <link href="/%E5%94%90%E4%BB%A3%E8%AF%97%E4%BA%BA%E7%9A%84%E9%9D%9E%E8%87%AA%E7%84%B6%E6%AD%BB%E4%BA%A1.html"/>
+      <url>/%E5%94%90%E4%BB%A3%E8%AF%97%E4%BA%BA%E7%9A%84%E9%9D%9E%E8%87%AA%E7%84%B6%E6%AD%BB%E4%BA%A1.html</url>
+      
+        <content type="html"><![CDATA[<br> <p><img src="/img/postimg/poem.jpg" alt="poem"></p><br> <h4 id="唐代诗人的非自然死亡"><a href="#唐代诗人的非自然死亡" class="headerlink" title="唐代诗人的非自然死亡"></a>唐代诗人的非自然死亡</h4><br> <p><strong><em>“落霞与孤鹜齐飞，秋水共长天一色。”</em></strong></p><p><strong>王勃：</strong>失足落水，惊悸而死。</p><br> <p><strong><em>“得成比目何辞死，愿作鸳鸯不羡仙。”</em></strong></p><p><strong>卢照邻：</strong>因麻疹疾病，不堪重负，投水自尽。</p><br> <p><strong><em>“鹅，鹅，鹅，曲项向天歌。”</em></strong></p><p><strong>骆宾王：</strong>造反失败，下落不明。</p><br> <p><strong><em>“念天地之悠悠，独怆然而涕下。”</em></strong></p><p><strong>陈子昂：</strong>遭陷害，冤死狱中。</p><br> <p><strong><em>“秦时明月汉时关，万里长征人未还。”</em></strong></p><p><strong>王昌龄：</strong>旅游时当地官员嫉妒其才能，将他杀害。</p><br> <p><strong><em>“春眠不觉晓，处处闻啼鸟。”</em></strong></p><p><strong>孟浩然：</strong>生病后吃了不该吃的东西(鱼），卒。</p><br> <p><strong><em>“漆灰骨末丹水砂，凄凄古血生铜花。”</em></strong></p><p><strong>李贺：</strong>仕进无路，体弱多病，27岁病逝。</p><br> <p><strong><em>“年年岁岁花相似，岁岁年年人不同。”</em></strong></p><p><strong>刘希夷：</strong>拒绝将此诗著作权转让给舅舅宋之问，被宋之问杀害。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 历史 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 历史 </tag>
+            
+            <tag> 唐诗 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STL源码赏析之constructor</title>
       <link href="/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Bconstructor.html"/>
       <url>/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Bconstructor.html</url>
@@ -74,9 +128,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
