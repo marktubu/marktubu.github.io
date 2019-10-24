@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://marktubu.github.io/C++%20Smart%20Pointer.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
+    <loc>https://marktubu.github.io/STL%E6%BA%90%E7%A0%81%E8%B5%8F%E6%9E%90%E4%B9%8Bsmart%20pointer.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
     <loc>https://marktubu.github.io/%E5%94%90%E4%BB%A3%E8%AF%97%E4%BA%BA%E7%9A%84%E9%9D%9E%E8%87%AA%E7%84%B6%E6%AD%BB%E4%BA%A1.html</loc>
     <lastmod>2019-10-18</lastmod>
   </url>  <url>
