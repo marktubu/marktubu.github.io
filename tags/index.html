@@ -47,7 +47,7 @@
     
     <title>
         
-            tags | 
+            标签: ++ | 
         
         Marktubu&#39;s Blog
     </title>
@@ -236,7 +236,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://marktubu.github.io/tags/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | Marktubu&#39;s Blog">
+    <meta property="og:title" content="标签: ++ | Marktubu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
     
@@ -288,63 +288,99 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
 
+    <!-- Pin on top -->
+    
 
-<!-- Layouts -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/C++ pre-increment &amp; post-increment.html">C++ pre-increment &amp; post-increment</a></p>
+    </div>
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+This article is about pre-increment and post-increment operator in C++.Also y...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/C++ pre-increment &amp; post-increment.html" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="marktubu's avatar">
+            </div>
+            <div>
+                <strong>marktubu</strong>
+                <span>10月 30, 2019</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/C/">C++</a>
+              </span>
+            
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+            
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+            
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/C/" style="font-size: 35px; color: #212121">C++</a> <a href="/tags/Issues/" style="font-size: 16px; color: #757575">Issues</a> <a href="/tags/STL/" style="font-size: 22.33px; color: #595959">STL</a> <a href="/tags/Shader/" style="font-size: 22.33px; color: #595959">Shader</a> <a href="/tags/Unity/" style="font-size: 28.67px; color: #3d3d3d">Unity</a> <a href="/tags/hexo/" style="font-size: 22.33px; color: #595959">hexo</a> <a href="/tags/keyword/" style="font-size: 16px; color: #757575">keyword</a> <a href="/tags/历史/" style="font-size: 16px; color: #757575">历史</a> <a href="/tags/唐诗/" style="font-size: 16px; color: #757575">唐诗</a> <a href="/tags/回溯/" style="font-size: 16px; color: #757575">回溯</a> <a href="/tags/日语/" style="font-size: 22.33px; color: #595959">日语</a> <a href="/tags/智能指针/" style="font-size: 16px; color: #757575">智能指针</a> <a href="/tags/算法/" style="font-size: 22.33px; color: #595959">算法</a>
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
 </div>
 
+            
+            
+        
+    
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+    
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 2 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-
-
+    
+</div>
 
 
                     
@@ -424,7 +460,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -442,7 +478,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Unity/">Unity<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/历史/">历史<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/工具/">工具<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言学习/">语言学习<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/Unity/">Unity<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/历史/">历史<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/工具/">工具<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言学习/">语言学习<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

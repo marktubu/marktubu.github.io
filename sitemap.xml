@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://marktubu.github.io/C++%20pre-increment%20&%20post-increment.html</loc>
+    
+    <lastmod>2019-10-31T02:46:21.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://marktubu.github.io/C++%20Virtual%20Function.html</loc>
+    
+    <lastmod>2019-10-29T02:25:10.091Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://marktubu.github.io/C++%20Smart%20Pointer.html</loc>
     
     <lastmod>2019-10-24T09:53:13.937Z</lastmod>
