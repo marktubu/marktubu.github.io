@@ -47,7 +47,7 @@
     
     <title>
         
-            文章分类 | 
+            C++ Function Object | 
         
         Marktubu&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",C++,STL,functor">
     <meta name="theme-color" content="#00BAFF">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Marktubu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://marktubu.github.io/categories/">
+    <meta name="msapplication-starturl" content="https://marktubu.github.io/C++ Function Object.html">
     <meta name="msapplication-navbutton-color" content="#00BAFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Marktubu&#39;s Blog">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://marktubu.github.io/categories/">
+    <meta property="og:url" content="https://marktubu.github.io/C++ Function Object.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="文章分类 | Marktubu&#39;s Blog">
+    <meta property="og:title" content="C++ Function Object | Marktubu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="C++"> <meta property="og:article:tag" content="STL"> <meta property="og:article:tag" content="functor"> 
 
+    
+        <meta property="article:published_time" content="Mon Nov 04 2019 22:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Nov 04 2019 13:57:53 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://marktubu.github.io/categories/index.html">
+        <link rel="canonical" href="https://marktubu.github.io/C++ Function Object.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://marktubu.github.io/C++ Function Object.html",
+    "headline": "C++ Function Object",
+    "datePublished": "Mon Nov 04 2019 22:00:00 GMT+0800",
+    "dateModified": "Mon Nov 04 2019 13:57:53 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "marktubu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "The world is in my mind."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Marktubu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C++,STL,functor",
+    "description": "",
+}
+</script>
 
 
     
@@ -290,6 +323,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#What-is-Function-Object"><span class="post-toc-number">1.</span> <span class="post-toc-text">What is Function Object</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#The-advantages-of-a-Function-Object-over-a-straight-function-call"><span class="post-toc-number">2.</span> <span class="post-toc-text">The advantages of a Function Object over a straight function call</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#The-usage-of-Function-Object"><span class="post-toc-number">3.</span> <span class="post-toc-text">The usage of Function Object</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#A-simple-implemation-of-Function-Object"><span class="post-toc-number">4.</span> <span class="post-toc-text">A simple implemation of Function Object</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -316,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                文章分类
+                C++ Function Object
             </p>
         </div>
 
@@ -335,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>marktubu</strong>
-        <span>8月 29, 2019</span>
+        <span>11月 04, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -352,6 +418,15 @@
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/STL/">STL</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/functor/">functor</a>
+    </ul>
     
 
     <!-- Share -->
@@ -378,7 +453,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=文章分类&url=https://marktubu.github.io/categories/index.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C++ Function Object&url=https://marktubu.github.io/C++ Function Object.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -387,7 +462,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=文章分类&url=https://marktubu.github.io/categories/index.html&via=marktubu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C++ Function Object&url=https://marktubu.github.io/C++ Function Object.html&via=marktubu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -405,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=文章分类&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=C++ Function Object&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/C++ Function Object.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -424,7 +499,64 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h5 id="What-is-Function-Object"><a href="#What-is-Function-Object" class="headerlink" title="What is Function Object"></a>What is Function Object</h5><blockquote>
+<p>A function object, or functor, is any type that implements operator(). This operator is referred to as the<br>call operator or sometimes the application operator. The C++ Standard Library uses function objects<br>primarily as sorting criteria for containers and in algorithms. </p>
+</blockquote>
+<br>
+
+<h5 id="The-advantages-of-a-Function-Object-over-a-straight-function-call"><a href="#The-advantages-of-a-Function-Object-over-a-straight-function-call" class="headerlink" title="The advantages of a Function Object over a straight function call"></a>The advantages of a Function Object over a straight function call</h5><blockquote>
+<p>Function objects provide two main advantages over a straight function call. The first is that a function object can contain state. The second is that a function object is a type and therefore can be used as a template parameter.</p>
+</blockquote>
+<br>
+
+<p>函数对象相比普通函数/函数指针来说主要有两个优势：</p>
+<ol>
+<li>函数对象可以带有状态</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this is a functor</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">add_x</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    add_x(<span class="keyword">int</span> x) : x(x) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> x + y; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">//the state</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Now you can use it like this:</span></span><br><span class="line"><span class="function">add_x <span class="title">add42</span><span class="params">(<span class="number">42</span>)</span></span>; <span class="comment">// create an instance of the functor class</span></span><br><span class="line"><span class="keyword">int</span> i = add42(<span class="number">8</span>); <span class="comment">// and "call" it</span></span><br><span class="line">assert(i == <span class="number">50</span>); <span class="comment">// and it added 42 to its argument</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; in; <span class="comment">// assume this contains a bunch of values)</span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; out(in.size());</span><br><span class="line"><span class="comment">// Pass a functor to std::transform, which calls the functor on every element </span></span><br><span class="line"><span class="comment">// in the input sequence, and stores the result to the output sequence</span></span><br><span class="line"><span class="built_in">std</span>::transform(in.begin(), in.end(), out.begin(), add_x(<span class="number">1</span>)); </span><br><span class="line">assert(out[i] == in[i] + <span class="number">1</span>); <span class="comment">// for all i</span></span><br></pre></td></tr></table></figure>
+
+<p>倒数第二行，我们将函数对象作为参数传递给了另一个函数，你或许可以使用函数指针做到相同的事情，但是由于函数对象包含状态，因此可以被定制，你可以传入42，或者1，或者任何其他整数作为该函数对象的初始状态。</p>
+<br>
+
+<ol start="2">
+<li>函数对象是一种类型，因此可以作为泛型参数。</li>
+</ol>
+<br>
+
+<ol start="3">
+<li>另一个相对函数指针的优点是，编译器知道 std::transform 应该调用的函数是 add_x::operator()， 因此编译器可以内联该函数从而提高效率。<br>但是如果换做一个函数指针，除非进行了一些复杂的全局优化，否则编译器不会立即知道它该调用哪一个函数，因此只能在运行时对该指针进行解引用，然后调用该函数。</li>
+</ol>
+<br>
+
+<h5 id="The-usage-of-Function-Object"><a href="#The-usage-of-Function-Object" class="headerlink" title="The usage of Function Object"></a>The usage of Function Object</h5><ol>
+<li>与容器搭配使用</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Key</span>,</span></span><br><span class="line"><span class="class">    <span class="title">class</span> <span class="title">Traits</span>=<span class="title">less</span>&lt;Key&gt;,</span></span><br><span class="line"><span class="class">    <span class="title">class</span> <span class="title">Allocator</span>=<span class="title">allocator</span>&lt;Key&gt;&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">set</span></span></span><br></pre></td></tr></table></figure>
+
+<p>上例中的less<key> 作为一个Function Object，可用于对 set 中的元素进行排序</key></p>
+<blockquote>
+<p>第二个模板参数是函数对象less。如果 less 的第一个参数小于第二个参数，则此函数对象返回true。由于某些容器会将其元素排序，因此&gt; 容器需要一种比较两个元素的方式。通过使用 Function Object 进行比较。您可以通过创建 Function Object 并在容器的模板列表中指&gt; 定它来为容器定义自己的排序标准。</p>
+</blockquote>
+<br>
+
+<ol start="2">
+<li>和算法搭配使用</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>, <span class="title">class</span> <span class="title">Predicate</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">ForwardIterator</span> <span class="title">remove_if</span>(</span></span><br><span class="line"><span class="class">    <span class="title">ForwardIterator</span> <span class="title">first</span>,</span></span><br><span class="line"><span class="class">    <span class="title">ForwardIterator</span> <span class="title">last</span>,</span></span><br><span class="line"><span class="class">    <span class="title">Predicate</span> <span class="title">pred</span>);</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>remove_if的最后一个参数是返回布尔值（predicate断言）的函数对象。如果函数对象的结果为true，则将元素从容器中删除。您可以将<functional>标头中声明的任何函数对象用作参数pred，也可以创建自己的函数对象。</functional></p>
+</blockquote>
+<br>
+
+<h5 id="A-simple-implemation-of-Function-Object"><a href="#A-simple-implemation-of-Function-Object" class="headerlink" title="A simple implemation of Function Object"></a>A simple implemation of Function Object</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一元函数</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> _<span class="title">Arg</span>, <span class="title">class</span> _<span class="title">Return</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">unary_function</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">typedef</span> _Arg argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> _Return return_type;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二元函数</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> _<span class="title">Arg1</span>, <span class="title">class</span> _<span class="title">Arg2</span>, <span class="title">class</span> _<span class="title">Return</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">binary_function</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">typedef</span> _Arg1 first_argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> _Arg2 second_argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> _Return return_type;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//算数运算符</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">negate</span> :</span> <span class="keyword">public</span> unary_function&lt;T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">return_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> argument_type&amp; _x)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> -x; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">plus</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operatora</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _x + _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">minus</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operatora</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _x - _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">multiply</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operatora</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _x * _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">divide</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operatora</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _x / _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">module</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operatora</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _x % _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//关系运算符</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">less</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; x, <span class="keyword">const</span> second_argument_type&amp; y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x &lt; y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">greater</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; x, <span class="keyword">const</span> second_argument_type&amp; y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x &gt; y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">equal_to</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">result_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; x, <span class="keyword">const</span> second_argument_type&amp; y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x == y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//逻辑运算符</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">logical_and</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">return_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> </span>&#123; <span class="keyword">return</span> _x &amp;&amp; _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">logical_or</span> :</span> <span class="keyword">public</span> binary_function&lt;T, T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">return_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> first_argument_type&amp; _x, <span class="keyword">const</span> second_argument_type&amp; _y)</span> </span>&#123; <span class="keyword">return</span> _x || _y; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">logical_not</span> :</span> <span class="keyword">public</span> unary_function&lt;T, <span class="keyword">bool</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">return_type <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> argument_type&amp; _x)</span> </span>&#123; <span class="keyword">return</span> !_x; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>Links:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/standard-library/function-objects-in-the-stl?view=vs-2019" target="_blank" rel="noopener">Function Objects in the C++ Standard Library</a></p>
+<p><a href="https://stackoverflow.com/questions/356950/what-are-c-functors-and-their-uses" target="_blank" rel="noopener">What are C++ functors and their uses?</a></p>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -432,7 +564,7 @@
                             This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 License</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://marktubu.github.io/categories/index.html">https://marktubu.github.io/categories/index.html</a>
+                        <strong>本文链接：</strong><a href="https://marktubu.github.io/C++ Function Object.html">https://marktubu.github.io/C++ Function Object.html</a>
                     </p>
                 </blockquote>
         
@@ -595,6 +727,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/C++ pre-increment & post-increment.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -771,6 +911,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
