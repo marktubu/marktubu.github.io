@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+        <link rel="dns-prefetch" href="https://cdn-city.livere.com">
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            C++ 一问一答 | 
+        
+        Marktubu&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content>
+    <meta name="keywords" content=",C++">
+    <meta name="theme-color" content="#00BAFF">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #00BAFF !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #00BAFF !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #00BAFF !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Marktubu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://marktubu.github.io/C++ 一问一答.html">
+    <meta name="msapplication-navbutton-color" content="#00BAFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Marktubu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://marktubu.github.io/C++ 一问一答.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="C++ 一问一答 | Marktubu&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content>
+    <meta property="og:article:tag" content="C++"> 
+
+    
+        <meta property="article:published_time" content="Mon Nov 04 2019 22:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Thu Nov 07 2019 15:23:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://marktubu.github.io/C++ 一问一答.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://marktubu.github.io/C++ 一问一答.html",
+    "headline": "C++ 一问一答",
+    "datePublished": "Mon Nov 04 2019 22:00:00 GMT+0800",
+    "dateModified": "Thu Nov 07 2019 15:23:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "marktubu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "The world is in my mind."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Marktubu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C++",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Some-questions-about-C"><span class="post-toc-number">1.</span> <span class="post-toc-text">Some questions about C++</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Continue-Updating…"><span class="post-toc-number">2.</span> <span class="post-toc-text">Continue Updating…</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Difference-between-pointer-and-reference"><span class="post-toc-number">3.</span> <span class="post-toc-text">Difference between pointer and reference?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Tips-什么时候使用引用，什么时候使用指针？"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Tips: 什么时候使用引用，什么时候使用指针？</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#i-i-which-one-is-better"><span class="post-toc-number">4.</span> <span class="post-toc-text">i++, ++i, which one is better?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Why-use-virtual-destructor"><span class="post-toc-number">5.</span> <span class="post-toc-text">Why use virtual destructor?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#What-is-the-signature-of-a-copy-constructor-assignment-operator"><span class="post-toc-number">6.</span> <span class="post-toc-text">What is the signature of a copy constructor / assignment operator?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#How-to-specialize-a-class-template"><span class="post-toc-number">7.</span> <span class="post-toc-text">How to specialize a class template?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#What-are-the-four-types-of-casts-in-C-Usage"><span class="post-toc-number">8.</span> <span class="post-toc-text">What are the four types of casts in C++? Usage?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#some-difference-between-dynamic-cast-and-static-cast"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">some difference between dynamic_cast and static_cast</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Why-the-assignment-operator-usually-return-a-reference-const-reference"><span class="post-toc-number">9.</span> <span class="post-toc-text">Why the assignment operator usually return a reference/const reference?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#more-about-copy-constructor-and-assignment-operator"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">more about copy constructor and assignment operator</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#shallow-copy-vs-deep-copy"><span class="post-toc-number">10.</span> <span class="post-toc-text">shallow copy vs deep copy</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Inheritance-Access-Specifier"><span class="post-toc-number">11.</span> <span class="post-toc-text">Inheritance Access Specifier</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 2 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                C++ 一问一答
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>marktubu</strong>
+        <span>11月 04, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C++ 一问一答&url=https://marktubu.github.io/C++ 一问一答.html&pic=https://marktubu.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C++ 一问一答&url=https://marktubu.github.io/C++ 一问一答.html&via=marktubu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Marktubu&#39;s Blog&title=C++ 一问一答&summary=&pics=https://marktubu.github.io/img/favicon.png&url=https://marktubu.github.io/C++ 一问一答.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="Some-questions-about-C"><a href="#Some-questions-about-C" class="headerlink" title="Some questions about C++"></a>Some questions about C++</h4><h4 id="Continue-Updating…"><a href="#Continue-Updating…" class="headerlink" title="Continue Updating…"></a>Continue Updating…</h4><br>
+
+<h4 id="Difference-between-pointer-and-reference"><a href="#Difference-between-pointer-and-reference" class="headerlink" title="Difference between pointer and reference?"></a>Difference between pointer and reference?</h4><p>A:指针是变量的地址，引用是变量的别名，由指针实现。</p>
+<p>More:简要说说其中7个不同之处：</p>
+<p>1) 作为变量的不同：<br>        引用可以说是现有变量的别名。此变量的主要用途是作为参数，可作为引用传递（pass by reference）。函数内部对该引用参数所做的更改也将反映在函数外部的原始变量上。指针变量是存储地址的变量。与我们常用的int，double和char等普通变量不同，它存储变量的内存地址。</p>
+<p>2) 声明的不同：<br>引用的声明方式是在变量前加一个 ‘&amp;’ 符号。<br>指针的声明方式是在变量前加一个 ‘*’ 符号。</p>
+<p>3) 重新赋值：<br>引用不可以被重新赋值。<br>指针可以被重新赋值。</p>
+<p>4) 内存地址：<br>引用变量和原始变量共享同一个地址。<br>指针拥有自己的地址，位于栈上。</p>
+<p>5) Null 值：<br>引用不可以被赋值为 Null。<br>指针可以被赋值为 Null。</p>
+<p>6) 间接性：<br>你可以使用指向指针的指针获得更高级别的间接性。而引用仅提供一种间接级别。</p>
+<p>7) 算术操作：<br>可以对指针进行多种算术操作，但没有叫做引用算术的东西。</p>
+<h5 id="Tips-什么时候使用引用，什么时候使用指针？"><a href="#Tips-什么时候使用引用，什么时候使用指针？" class="headerlink" title="Tips: 什么时候使用引用，什么时候使用指针？"></a>Tips: 什么时候使用引用，什么时候使用指针？</h5><p>引用：<br>    用于参数传递和返回值<br>指针：<br>    当需要进行指针运算，或者需要传入null指针时使用指针。比如操作数组。<br>    当实现一些如链表，树等数据结构时。</p>
+<p><strong>Links</strong><br><a href="https://www.geeksforgeeks.org/pointers-vs-references-cpp/" target="_blank" rel="noopener">pointers vs references cpp</a><br><a href="https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in" target="_blank" rel="noopener">difference between pointer variable and reference variable</a></p>
+<br>
+
+<h4 id="i-i-which-one-is-better"><a href="#i-i-which-one-is-better" class="headerlink" title="i++, ++i, which one is better?"></a>i++, ++i, which one is better?</h4><p>A:++i is better.</p>
+<p>More:<br>对于简单类型（如int），二者没有性能区别，因为编译器会把 i++ 优化为 ++i。<br>然而，如果i是一个类，则这些 ++ 操作会调用类定义的 operator++ 函数。</p>
+<p>以下为两个版本的 operator++ 函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Foo&amp; Foo::<span class="keyword">operator</span>++()   <span class="comment">// called for ++i</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;data += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo Foo::<span class="keyword">operator</span>++(<span class="keyword">int</span> ignored_dummy_value)   <span class="comment">// called for i++</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Foo <span class="title">tmp</span><span class="params">(*<span class="keyword">this</span>)</span></span>;   <span class="comment">// variable "tmp" cannot be optimized away by the compiler</span></span><br><span class="line">    ++(*<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于编译器不生成代码，而是仅仅调用operator ++函数，因此无法优化tmp变量及其关联的拷贝构造函数。如果拷贝构造函数代价高昂，那么这可能会对性能产生重大影响。</p>
+<p><strong>Links</strong><br><a href="https://stackoverflow.com/questions/24901/is-there-a-performance-difference-between-i-and-i-in-c" target="_blank" rel="noopener">difference between i++ and ++i</a></p>
+<br>
+
+<h4 id="Why-use-virtual-destructor"><a href="#Why-use-virtual-destructor" class="headerlink" title="Why use virtual destructor?"></a>Why use virtual destructor?</h4><p>A:当您可能通过指向基类的指针删除派生类的实例时，虚拟析构函数很有用。<br>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// some virtual methods</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span> :</span> <span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line">    ~Derived()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Do some important cleanup</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在这里没有声明Base的析构函数是虚析构函数。现在，让我们看一下以下代码片段：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Base *b = <span class="keyword">new</span> Derived();</span><br><span class="line"><span class="comment">// use b</span></span><br><span class="line"><span class="keyword">delete</span> b; <span class="comment">// Here's the problem!</span></span><br></pre></td></tr></table></figure>
+
+<p>由于Base的析构函数不是虚拟的，并且b是指向派生对象的Base *，因此delete b具有未定义的行为：</p>
+<blockquote>
+<p>[在delete b中]，如果要删除的对象的静态类型(Base)与其动态类型(Derived)不同，则静态类型应为要删除的对象的动态类型的基类，并&gt; 且静态类型应具有虚拟析构函数,否则该行为是未定义的。</p>
+</blockquote>
+<p>在大多数实现中，对析构函数的调用将像任何非虚拟代码一样进行解析，这意味着将调用基类的析构函数，但不会调用派生类之一，从而导致资源泄漏。</p>
+<p>综上所述，在需要对基类的析构函数进行多态操作时，始终使它们虚拟。</p>
+<p>如果要防止通过基类指针删除实例，则可以使基类的析构函数为 protected 且是 non-virtual 的。这样，编译器将不允许您在基类指针上调用delete。</p>
+<p><strong>Links</strong><br><a href="https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors?answertab=active#tab-top" target="_blank" rel="noopener">when to use virtual destructors</a></p>
+<br>
+
+<h4 id="What-is-the-signature-of-a-copy-constructor-assignment-operator"><a href="#What-is-the-signature-of-a-copy-constructor-assignment-operator" class="headerlink" title="What is the signature of a copy constructor / assignment operator?"></a>What is the signature of a copy constructor / assignment operator?</h4><p>A:<br>copy constructor:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Foo::Foo(<span class="keyword">const</span> Foo&amp; foo);</span><br></pre></td></tr></table></figure>
+
+<p>assignment operator:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Foo&amp; <span class="keyword">operator</span> =(<span class="keyword">const</span> Foo&amp; foo);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="How-to-specialize-a-class-template"><a href="#How-to-specialize-a-class-template" class="headerlink" title="How to specialize a class template?"></a>How to specialize a class template?</h4><p>A:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//original template class</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Foo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T1 value1;</span><br><span class="line">    T2 value2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//original function template 函数模板</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T</span> <span class="title">max</span>(<span class="title">const</span> <span class="title">T</span> <span class="title">lhs</span>, <span class="title">const</span> <span class="title">T</span> <span class="title">rhs</span>)</span></span><br><span class="line"><span class="class">&#123;</span>   </span><br><span class="line">    <span class="keyword">return</span> lhs &gt; rhs ? lhs : rhs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//全特化：</span></span><br><span class="line"><span class="comment">//full template specialization 类模板全特化</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>&lt;int, double&gt;</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value1;</span><br><span class="line">    <span class="keyword">double</span> value2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数模板全特化</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> lhs, <span class="keyword">const</span> <span class="keyword">int</span> rhs)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">return</span> lhs &gt; rhs ? lhs : rhs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//偏特化：</span></span><br><span class="line"><span class="comment">//函数模板不支持偏特化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//类模板偏特化</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">A</span>&lt;int, T2&gt;&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value1;</span><br><span class="line">    T2 value2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="What-are-the-four-types-of-casts-in-C-Usage"><a href="#What-are-the-four-types-of-casts-in-C-Usage" class="headerlink" title="What are the four types of casts in C++? Usage?"></a>What are the four types of casts in C++? Usage?</h4><p>A: dynamic_cast, reinterpret_cast, static_cast and const_cast.</p>
+<p>1) dynamic_cast<br>dynamic_cast can be used only with pointers and references to objects. Its purpose is to ensure that the result of the type conversion is a valid complete object of the requested class. It also performs the run-time check necessary to make the operation safe.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase</span> &#123;</span> &#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDerived</span>:</span> <span class="keyword">public</span> CBase &#123; &#125;;</span><br><span class="line"></span><br><span class="line">CBase b; CBase* pb;</span><br><span class="line">CDerived d; CDerived* pd;</span><br><span class="line"></span><br><span class="line">pb = <span class="keyword">dynamic_cast</span>&lt;CBase*&gt;(&amp;d);     <span class="comment">// ok: derived-to-base</span></span><br><span class="line">pd = <span class="keyword">dynamic_cast</span>&lt;CDerived*&gt;(&amp;b);  <span class="comment">// wrong: base-to-derived</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// dynamic_cast</span></span><br><span class="line">include &lt;iostream&gt;</span><br><span class="line">include &lt;exception&gt;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase</span> &#123;</span> <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">dummy</span><span class="params">()</span> </span>&#123;&#125; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDerived</span>:</span> <span class="keyword">public</span> CBase &#123; <span class="keyword">int</span> a; &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    CBase * pba = <span class="keyword">new</span> CDerived;</span><br><span class="line">    CBase * pbb = <span class="keyword">new</span> CBase;</span><br><span class="line">    CDerived * pd;</span><br><span class="line"></span><br><span class="line">    pd = <span class="keyword">dynamic_cast</span>&lt;CDerived*&gt;(pba);</span><br><span class="line">    <span class="keyword">if</span> (pd==<span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Null pointer on first type-cast"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    pd = <span class="keyword">dynamic_cast</span>&lt;CDerived*&gt;(pbb);</span><br><span class="line">    <span class="keyword">if</span> (pd==<span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Null pointer on second type-cast"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (exception&amp; e) &#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"Exception: "</span> &lt;&lt; e.what();&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果为：</p>
+<blockquote>
+<p>Null pointer on second type-cast</p>
+</blockquote>
+<p>pba和pbb都是 CBase* 类型的是指针，但是pba指向类型为 CDerived 类型的对象，pbb指向类型为 CBase 的对象，因此，当使用dynamic_cast执行它们各自的类型转换时，pba指向CDerived类的完整对象，而pbb指向CBase类的对象，该对象是CDerived类的不完整对象。<br>当所转换的指针指向的对象不是所需类型的完整对象时，dynamic_cast 返回空指针。</p>
+<p>2) static_cast</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase</span> &#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDerived</span>:</span> <span class="keyword">public</span> CBase &#123;&#125;;</span><br><span class="line">CBase * a = <span class="keyword">new</span> CBase;</span><br><span class="line">CDerived * b = <span class="keyword">static_cast</span>&lt;CDerived*&gt;(a);   <span class="comment">//could lead to runtime errors if dereferenced.</span></span><br></pre></td></tr></table></figure>
+
+<p>static_cast 可用于将指向 CBase 类型的指针转化为 CDerived 类型，如果原指针指向的对象是 CBase 类型，那么该转化将得到一个指向不完整对象的指针，对该指针解引用可能引发运行时错误。<br>和 dynamic_cast 不同的是， static_cast 不会做运行时检查。</p>
+<h5 id="some-difference-between-dynamic-cast-and-static-cast"><a href="#some-difference-between-dynamic-cast-and-static-cast" class="headerlink" title="some difference between dynamic_cast and static_cast"></a>some difference between dynamic_cast and static_cast</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// static_cast_Operator_2.cpp</span></span><br><span class="line"><span class="comment">// compile with: /LD /GR</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Test</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> :</span> <span class="keyword">public</span> B &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(B* pb)</span> </span>&#123;</span><br><span class="line">   D* pd1 = <span class="keyword">dynamic_cast</span>&lt;D*&gt;(pb);</span><br><span class="line">   D* pd2 = <span class="keyword">static_cast</span>&lt;D*&gt;(pb);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>情况1：pb 指向类型为 D 的对象<br>If pb really points to an object of type D, then pd1 and pd2 will get the same value. They will also get the same value if pb == 0.</p>
+<p>情况2：pb 指向类型为 B 的对象<br>If pb points to an object of type B and not to the complete D class, then dynamic_cast will know enough to return zero. However, static_cast relies on the programmer’s assertion that pb points to an object of type D and simply returns a pointer to that supposed D object.</p>
+<p>3) reinterpret_cast<br>Allows any pointer to be converted into any other pointer type. Also allows any integral type to be converted into any pointer type and vice versa.</p>
+<p>4) const_cast<br>Removes the const, volatile, and __unaligned attribute(s) from a class.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// expre_const_cast_Operator.cpp</span></span><br><span class="line"><span class="comment">// compile with: /EHsc</span></span><br><span class="line">include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CCTest</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">setNumber</span><span class="params">( <span class="keyword">int</span> )</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">printNumber</span><span class="params">()</span> <span class="keyword">const</span></span>;    </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">   <span class="keyword">int</span> number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CCTest::setNumber( <span class="keyword">int</span> num ) &#123; number = num; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CCTest::printNumber() <span class="keyword">const</span> &#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"\nBefore: "</span> &lt;&lt; number;</span><br><span class="line">   <span class="keyword">const_cast</span>&lt; CCTest * &gt;( <span class="keyword">this</span> )-&gt;number--;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"\nAfter: "</span> &lt;&lt; number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   CCTest X;</span><br><span class="line">   X.setNumber( <span class="number">8</span> );</span><br><span class="line">   X.printNumber();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>On the line containing the const_cast, the data type of the this pointer is const CCTest *. The const_cast operator changes the data type of the this pointer to CCTest *, allowing the member number to be modified. The cast lasts only for the remainder of the statement in which it appears.</p>
+<br>
+
+<h4 id="Why-the-assignment-operator-usually-return-a-reference-const-reference"><a href="#Why-the-assignment-operator-usually-return-a-reference-const-reference" class="headerlink" title="Why the assignment operator usually return a reference/const reference?"></a>Why the assignment operator usually return a reference/const reference?</h4><p>A:Strictly speaking, the result of a copy assignment operator doesn’t need to return a reference.<br>Returning <strong>void</strong> will prevent users from <strong>‘assignment chaining’</strong> (a = b = c;), and will prevent using the result of an assignment in a test expression</p>
+<p>Proformance reason:<br>If you return a reference, minimal work is done. The values from one object are copied to another object.<br>However, if you return by value for operator=, you will call a constructor AND destructor EACH time that the assignment operator is called!!</p>
+<h5 id="more-about-copy-constructor-and-assignment-operator"><a href="#more-about-copy-constructor-and-assignment-operator" class="headerlink" title="more about copy constructor and assignment operator"></a>more about copy constructor and assignment operator</h5><p>Consider following class:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Foo()&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"constructor"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">	Foo(<span class="keyword">int</span> _x) : x(_x)&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"constructor 2"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">    Foo(<span class="keyword">const</span> Foo&amp; v)&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"copy constructor"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">    ~Foo()&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"deconstructor "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//first operator=</span></span><br><span class="line">	Foo <span class="keyword">operator</span>=(Foo&amp; vec);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//second operator= (more effecient)</span></span><br><span class="line">	Foo&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> Foo&amp; foo);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Foo Foo::<span class="keyword">operator</span>=(Foo&amp; foo)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"operator = 1"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	Foo f;</span><br><span class="line">	f.x = foo.x;</span><br><span class="line">	<span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo&amp; Foo::<span class="keyword">operator</span>=(<span class="keyword">const</span> Foo&amp; foo)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"operator = 2"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;x = foo.x;</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>When I write some code like this:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Foo <span class="title">v</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">	Foo v2 = v;</span><br><span class="line">	v2.x = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>result:</p>
+<blockquote>
+<p>constructor 2<br>copy constructor<br>deconstructor 2       <strong>deconstructor for v2</strong><br>deconstructor 1       <strong>deconstructor for v</strong></p>
+</blockquote>
+<p><strong>‘Foo v2 = v;’ is not assignment statement, but an initialization.</strong> <strong>So the copy constructor instead of the operator= is called.</strong> If you want the operator= to be called, change code to:<br>    Foo v2;<br>    v2 = v;</p>
+<br>
+
+<h4 id="shallow-copy-vs-deep-copy"><a href="#shallow-copy-vs-deep-copy" class="headerlink" title="shallow copy vs deep copy"></a>shallow copy vs deep copy</h4><p>Shallow copies duplicate as little as possible. A shallow copy of a collection is a copy of the collection structure, not the elements. With a shallow copy, two collections now share the individual elements.</p>
+<p>Deep copies duplicate everything. A deep copy of a collection is two collections with all of the elements in the original collection duplicated.</p>
+<br>
+
+<h4 id="Inheritance-Access-Specifier"><a href="#Inheritance-Access-Specifier" class="headerlink" title="Inheritance Access Specifier"></a>Inheritance Access Specifier</h4><br> 
+
+<p><img src="/img/postimg/class_inheritance_diagram.png" alt="inheritance"></p>
+<br> 
+Private:
+With private inheritance, public and protected member of the base class become private members of the derived class. That means the methods of the base class do not become the public interface of the derived object. However, they can be used inside the member functions of the derived class.
+
+<p>Public:<br>With public inheritance, the public methods of the base class become public methods of the derived class. In other words, the derived class inherits the base-class interface (the interface is still visible to outside and can use it). This is the is-a relationship. But with the private inheritance, the public methods of the base class become private methods of the derived class, even if they were protected or public in the base class. So, the derived class does not inherit the base-class interface.</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 License</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://marktubu.github.io/C++ 一问一答.html">https://marktubu.github.io/C++ 一问一答.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+
+    
+        <!-- css -->
+        <style type="text/css">
+            .center {
+                text-align: center;
+            }
+            #donate_guide.noActive,#donate_board.noActive  {
+                /*display: none;*/
+                height:0;
+                opacity:0;
+                visibility: hidden;
+            }
+          .donate_bar a.btn_donate{
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            background: url("/img/reward.png") no-repeat;
+            _background: url("/img/reward.png") no-repeat;
+       
+       
+            -webkit-transition: background 0s;
+            -moz-transition: background 0s;
+            -o-transition: background 0s;
+            -ms-transition: background 0s;
+            transition: background 0s;
+       
+          }
+          #donate_guide{
+            opacity:1;
+            visibility: visible;
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            transition: all .3s linear;
+          }
+          .donate_bar a.btn_donate:hover{ background-position: 0px -2px;}
+          .donate_bar .donate_txt {
+            display: block;
+            color: #9d9d9d;
+            font: 14px/2 "Microsoft Yahei";
+            margin-top:10px;
+          }
+          .bold{ font-weight: bold; }
+          @media screen and (max-width:500px) {
+            #donate_guide>a{
+              display:block;
+            }
+          }
+        </style>
+        <!-- /css -->
+       
+          <!-- Donate Module -->
+          <div id="donate_module">
+       
+          <!-- btn_donate & tips -->
+          <div id="donate_board" class="donate_bar center">
+              <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+            <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+            <span class="donate_txt">
+              Enjoy it ? Donate me !  真诚赞赏，手留余香
+            </span>
+       
+       
+          </div>
+          <!-- /btn_donate & tips -->
+       
+          <!-- donate guide -->
+       
+          <div id="donate_guide" class="donate_bar center noActive">
+                <br>
+              ------------------------------------------------------------------------------------------------------------------------------
+              <br>
+
+                <!--<a href="/img/wechat.png" title="用微信扫一扫哦~" class="fancybox" rel="article0">-->
+                  <img src="/img/wechat.png" title="微信打赏" height="190px" width="190"/>
+                  <span class="donate_txt">
+                    用微信扫一扫哦~
+                  </span>
+                <!--</a>-->
+          
+                    &nbsp;&nbsp;
+                    <br />
+                <!--<a href="/img/alipay.png" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">-->
+                  <img src="/img/alipay.png" title="支付宝打赏" height="190px" width="190"/>
+
+                  <span class="donate_txt">
+                    用支付宝扫一扫即可~
+                  </span>
+                <!--</a>-->
+
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  真诚赞赏，手留余香
+                </span>
+       
+          </div>
+          <!-- /donate guide -->
+       
+          <!-- donate script -->
+          <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+              $('#donate_board').addClass('noActive');
+              $('#donate_guide').removeClass('noActive');
+            }
+          </script>
+          <!-- /donate script -->
+       
+       
+        </div>
+        <!-- /Donate Module -->
+        
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjQ1NS8yMjk2Ng==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/Unity Shader 模糊算子.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/C++ Function Object.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="marktubu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        marktubu0@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Unity/">Unity<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/历史/">历史<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/工具/">工具<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言学习/">语言学习<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/marktubu/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/9532760" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Marktubu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/unitychan.model.json"},"display":{"position":"right","width":150,"height":300,"bottom":-30},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+    
+</html>
